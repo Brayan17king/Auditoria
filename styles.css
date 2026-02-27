@@ -350,11 +350,20 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(26,47,90,0.09); }
 }
 
 /* Hero illustration */
+/* Hero illustration - aparece con fade y luego flota infinitamente */
+@keyframes heroAppear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 .hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: float 4.5s ease-in-out infinite;
+  opacity: 0;
+  animation:
+    heroAppear 0.7s ease 0.3s forwards,
+    float      4.5s ease-in-out 1.2s infinite;
 }
 
 .hero-svg { width: 100%; max-width: 460px; height: auto; }
@@ -477,10 +486,11 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(26,47,90,0.09); }
   line-height: 1.3;
 }
 
-/* Descripción expandida — usa Source Serif para mejor lectura */
+/* Descripción expandida */
 .card-desc {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.91rem;
+  font-weight: 400;
   color: var(--gray-600);
   line-height: 1.75;
   margin-bottom: 16px;

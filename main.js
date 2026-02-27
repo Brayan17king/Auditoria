@@ -2,7 +2,8 @@
    AuditaFácil — main.js
    Funcionalidades:
    - Scroll reveal con IntersectionObserver
-   - Navbar activa al hacer scroll
+   - Navbar shadow al hacer scroll
+   (La animación del hero se maneja 100% en CSS)
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
 
-      // Stagger dentro del mismo padre para efecto de ola
       const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
       const idx = siblings.indexOf(entry.target);
-      const delay = (idx % 4) * 90; // máx ~270ms de desfase
+      const delay = (idx % 4) * 90;
 
       setTimeout(() => {
         entry.target.classList.add('visible');
@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
      NAVBAR SCROLL SHADOW
   ------------------------- */
   const nav = document.querySelector('nav');
-
-  const navObserver = new IntersectionObserver(([entry]) => {
-    nav.classList.toggle('scrolled', !entry.isIntersecting);
-  }, { threshold: 0 });
-
-  // Observa el hero para saber si ya pasamos
   const hero = document.querySelector('.hero');
-  if (hero) navObserver.observe(hero);
+
+  if (nav && hero) {
+    const navObserver = new IntersectionObserver(([entry]) => {
+      nav.classList.toggle('scrolled', !entry.isIntersecting);
+    }, { threshold: 0 });
+    navObserver.observe(hero);
+  }
 
 });
