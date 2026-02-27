@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Guía visual y sencilla para entender los conceptos clave de la auditoría de sistemas. Sin tecnicismos, con ejemplos del día a día." />
+
+  <title>AuditaFácil — Auditoría de Sistemas Explicada Fácil</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- =====================
+       NAVBAR
+  ===================== -->
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Inicio AuditaFácil">
+        <div class="logo-box" aria-hidden="true">🔍</div>
+        AuditaFácil
+      </a>
+      <a href="#conceptos" class="nav-cta">Aprender Fácil</a>
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO
+  ===================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Texto -->
+        <div>
+          <div class="hero-badge fade-up" role="text">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            📚 Guía para todos
+          </div>
+
+          <h1 id="hero-title" class="fade-up delay-1">
+            Auditoría de Sistemas<br />
+            <span class="highlight">Explicada Fácil</span>
+          </h1>
+
+          <p class="hero-sub fade-up delay-2">
+            ¿Estas palabras te suenan complicadas? Aquí te explicamos todo con ejemplos simples de tu vida diaria.
+            Sin tecnicismos, sin aburrición. 😊
+          </p>
+
+          <a href="#conceptos" class="hero-cta fade-up delay-3" aria-label="Ir a la sección de conceptos">
+            Empezar a aprender
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+
+          <div class="hero-stats fade-up delay-4" role="group" aria-label="Datos rápidos">
+            <div class="stat">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Conceptos clave</span>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Fácil de entender</span>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-num">0</span>
+              <span class="stat-label">Tecnicismos aburridos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ilustración SVG -->
+        <div class="hero-visual fade-in delay-2" aria-hidden="true">
+          <svg class="hero-svg" viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="s1"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2f5a" flood-opacity="0.1"/></filter>
+              <filter id="s2"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1a2f5a" flood-opacity="0.12"/></filter>
+            </defs>
+            <rect x="40" y="40" width="380" height="320" rx="28" fill="#e8f0fe" opacity="0.45"/>
+            <rect x="80" y="70" width="200" height="260" rx="16" fill="white" filter="url(#s1)"/>
+            <rect x="106" y="100" width="140" height="10" rx="5" fill="#e8f0fe"/>
+            <rect x="106" y="120" width="110" height="8" rx="4" fill="#eef0f6"/>
+            <rect x="106" y="140" width="130" height="8" rx="4" fill="#eef0f6"/>
+            <rect x="106" y="160" width="90"  height="8" rx="4" fill="#eef0f6"/>
+            <!-- Check rows -->
+            <rect x="106" y="188" width="148" height="28" rx="8" fill="#e8f0fe"/>
+            <circle cx="120" cy="202" r="8" fill="#2d5be3"/>
+            <text x="116" y="207" font-size="10" fill="white" font-family="sans-serif">✓</text>
+            <rect x="135" y="197" width="100" height="6" rx="3" fill="#c5d5fb"/>
+            <rect x="106" y="224" width="148" height="28" rx="8" fill="#e8f8f5"/>
+            <circle cx="120" cy="238" r="8" fill="#00c9b1"/>
+            <text x="116" y="243" font-size="10" fill="white" font-family="sans-serif">✓</text>
+            <rect x="135" y="233" width="80" height="6" rx="3" fill="#a7f3d0"/>
+            <rect x="106" y="260" width="148" height="28" rx="8" fill="#fff5f7"/>
+            <circle cx="120" cy="274" r="8" fill="#ff6b8a"/>
+            <text x="117" y="279" font-size="11" fill="white" font-family="sans-serif">!</text>
+            <rect x="135" y="269" width="95" height="6" rx="3" fill="#ffd6de"/>
+            <!-- Lupa -->
+            <circle cx="320" cy="180" r="60" fill="white" filter="url(#s2)"/>
+            <circle cx="320" cy="180" r="44" fill="#f0f5ff" stroke="#2d5be3" stroke-width="4"/>
+            <rect x="302" y="170" width="36" height="6" rx="3" fill="#2d5be3" opacity="0.5"/>
+            <rect x="302" y="182" width="28" height="6" rx="3" fill="#2d5be3" opacity="0.3"/>
+            <rect x="302" y="194" width="32" height="6" rx="3" fill="#2d5be3" opacity="0.2"/>
+            <line x1="352" y1="212" x2="378" y2="242" stroke="#2d5be3" stroke-width="6" stroke-linecap="round"/>
+            <!-- Badge auditado -->
+            <rect x="278" y="78" width="122" height="40" rx="20" fill="#2d5be3" filter="url(#s2)"/>
+            <text x="339" y="104" font-size="13" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">✓ Auditado</text>
+            <!-- Estrella -->
+            <circle cx="390" cy="310" r="24" fill="#ffb547" opacity="0.9"/>
+            <text x="390" y="318" font-size="18" text-anchor="middle" font-family="sans-serif">⭐</text>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CONCEPTOS
+  ===================== -->
+  <section class="concepts-section" id="conceptos" aria-labelledby="conceptos-titulo">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">📖 Conceptos</span>
+        <h2 id="conceptos-titulo" class="section-title">Los 12 conceptos que necesitas saber</h2>
+        <p class="section-sub">
+          Cada concepto explicado con palabras simples, con detalle suficiente para que quede claro,
+          y con un ejemplo de tu vida cotidiana.
+        </p>
+      </div>
+
+      <div class="concepts-grid" role="list">
+
+        <!-- 01 · ISO -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-blue" aria-hidden="true">🌍</div>
+          <p class="card-num">Concepto 01</p>
+          <h3 class="card-title">¿Qué es la ISO y de qué se encarga?</h3>
+          <p class="card-desc">
+            La ISO (Organización Internacional de Normalización) es un organismo mundial que reúne a expertos
+            de más de 160 países para crear normas y estándares que ayudan a las empresas a funcionar mejor,
+            de manera segura y con calidad. Estas normas no son leyes obligatorias por sí solas, pero las
+            organizaciones las adoptan para demostrar que sus productos o servicios son confiables.
+            Cada norma ISO tiene un número: por ejemplo, la ISO 9001 es la más conocida y habla de calidad
+            en los procesos empresariales. En resumen, la ISO pone las reglas del juego para que todas las
+            empresas del mundo puedan competir de forma justa y con los mismos estándares de calidad.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Cuando compras un casco de bicicleta y dice "certificado ISO", significa que fue fabricado siguiendo las reglas de seguridad que la ISO definió para ese producto.</span>
+          </div>
+        </article>
+
+        <!-- 02 · Interna vs Externa -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-teal" aria-hidden="true">🔄</div>
+          <p class="card-num">Concepto 02</p>
+          <h3 class="card-title">Auditoría Interna vs. Auditoría Externa</h3>
+          <p class="card-desc">
+            Una <strong>auditoría interna</strong> es realizada por personas que trabajan dentro de la misma empresa.
+            Ellas conocen bien los procesos y revisan si todo funciona correctamente desde adentro.
+            Su objetivo es detectar problemas antes de que alguien externo los encuentre.
+            Una <strong>auditoría externa</strong>, en cambio, la hace una persona o empresa independiente,
+            que no tiene relación con la organización. Por eso su opinión es más imparcial y objetiva.
+            Ambas son importantes: la interna para el control y la mejora continua, y la externa para ganar
+            credibilidad ante clientes, socios o entidades reguladoras.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Interna = tu mamá revisa tu cuarto antes de la visita. Externa = la abuela llega a inspeccionarlo sin avisar. Las dos encuentran cosas distintas.</span>
+          </div>
+        </article>
+
+        <!-- 03 · Documentación de referencia -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-amber" aria-hidden="true">📄</div>
+          <p class="card-num">Concepto 03</p>
+          <h3 class="card-title">Documentación de Referencia</h3>
+          <p class="card-desc">
+            Es el conjunto de documentos que el auditor usa como base para comparar cómo deberían hacerse
+            las cosas versus cómo se están haciendo en realidad. Puede incluir normas internacionales
+            (como las de la ISO), leyes nacionales, reglamentos internos de la empresa, procedimientos
+            escritos, manuales de operación y políticas organizacionales. Sin documentación de referencia,
+            el auditor no tendría un punto de comparación claro y no podría decir si algo está bien o mal.
+            Es la brújula que guía toda la auditoría.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> En el colegio, el reglamento escolar es la documentación de referencia: el inspector lo usa para saber si un estudiante cumplió o no las normas.</span>
+          </div>
+        </article>
+
+        <!-- 04 · Alcance -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-violet" aria-hidden="true">🎯</div>
+          <p class="card-num">Concepto 04</p>
+          <h3 class="card-title">Alcance de la Auditoría</h3>
+          <p class="card-desc">
+            El alcance define con precisión qué áreas, procesos, sistemas o períodos de tiempo van a ser
+            revisados durante la auditoría, y cuáles quedan fuera de ella. Es fundamental establecerlo
+            desde el principio para que el auditor sepa exactamente hasta dónde llega su trabajo y no
+            haya confusiones. Un alcance bien definido evita que la auditoría se extienda demasiado o que
+            se queden aspectos importantes sin revisar. Puede ser amplio (toda la empresa) o muy específico
+            (solo el área de facturación del último trimestre).
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> "Voy a revisar solo tu mochila, no toda tu habitación." Eso es el alcance: delimita exactamente qué se va a revisar.</span>
+          </div>
+        </article>
+
+        <!-- 05 · Auditor de calidad -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-blue" aria-hidden="true">👤</div>
+          <p class="card-num">Concepto 05</p>
+          <h3 class="card-title">El Auditor de Calidad</h3>
+          <p class="card-desc">
+            Es la persona capacitada y certificada para planificar, ejecutar y reportar una auditoría.
+            Su trabajo es evaluar si una organización cumple con los criterios establecidos, identificar
+            fallos o áreas de mejora, y documentar sus hallazgos de forma objetiva y clara.
+            Para hacer su trabajo bien, debe ser imparcial —no puede tener intereses personales en los
+            resultados—, observador, analítico y hábil para comunicar sus conclusiones. Un buen auditor
+            no busca "atrapar" a nadie, sino ayudar a que la organización mejore.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Como el inspector de sanidad que visita un restaurante: no va a buscar problemas por gusto, sino a verificar que todo sea seguro para los clientes.</span>
+          </div>
+        </article>
+
+        <!-- 06 · Programa de auditoría -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-teal" aria-hidden="true">📅</div>
+          <p class="card-num">Concepto 06</p>
+          <h3 class="card-title">Programa de Auditoría</h3>
+          <p class="card-desc">
+            Es el plan maestro que organiza y coordina todas las auditorías que se van a realizar
+            durante un período determinado (normalmente un año). Incluye qué áreas se van a auditar,
+            en qué fechas, con qué frecuencia, quién será el auditor responsable y qué recursos se
+            necesitan. El programa garantiza que ningún proceso importante quede sin revisar y que
+            las auditorías se realicen de manera ordenada, eficiente y sin conflictos de agenda.
+            Es el calendario de toda la actividad auditora de una organización.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Como el calendario escolar anual: define cuándo son los exámenes de cada materia, quién los aplica y en qué orden. Así nadie se sorprende.</span>
+          </div>
+        </article>
+
+        <!-- 07 · Criterios -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-rose" aria-hidden="true">⚖️</div>
+          <p class="card-num">Concepto 07</p>
+          <h3 class="card-title">Criterios de la Auditoría</h3>
+          <p class="card-desc">
+            Los criterios son el conjunto de normas, requisitos, políticas o procedimientos que se usan
+            como referencia para evaluar y medir lo que se está auditando. Son el estándar con el que
+            se compara la realidad: si algo cumple el criterio, está bien; si no lo cumple, es un
+            hallazgo negativo. Los criterios deben ser claros, conocidos y acordados antes de iniciar
+            la auditoría, para que tanto el auditor como los auditados sepan exactamente qué se espera.
+            Sin criterios claros, una auditoría no tiene validez.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> En la escuela, la escala de calificaciones (de 1.0 a 5.0) es el criterio: antes del examen ya sabes que necesitas sacar mínimo 3.0 para pasar.</span>
+          </div>
+        </article>
+
+        <!-- 08 · Hallazgo -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-amber" aria-hidden="true">🔎</div>
+          <p class="card-num">Concepto 08</p>
+          <h3 class="card-title">Hallazgo de la Auditoría</h3>
+          <p class="card-desc">
+            Un hallazgo es el resultado de comparar la evidencia recopilada durante la auditoría con los
+            criterios establecidos. Puede ser positivo (cuando se cumple o supera lo esperado) o negativo
+            (cuando hay diferencias, incumplimientos o riesgos). Los hallazgos se documentan con evidencia
+            concreta: documentos, registros, observaciones o declaraciones. Son la base del informe final
+            de auditoría y deben ser comunicados de forma clara y objetiva. Cada hallazgo que muestra
+            un problema debe incluir la causa, el efecto y una recomendación de mejora.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Revisas tu mochila para ir al colegio y encuentras que falta el cuaderno de matemáticas y el borrador. Esos dos elementos son los hallazgos de tu "auditoría de mochila".</span>
+          </div>
+        </article>
+
+        <!-- 09 · Conformidad -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-green" aria-hidden="true">✅</div>
+          <p class="card-num">Concepto 09</p>
+          <h3 class="card-title">Conformidad</h3>
+          <p class="card-desc">
+            La conformidad ocurre cuando una actividad, proceso, producto o sistema cumple plenamente
+            con los requisitos o criterios establecidos. Es una señal positiva en la auditoría: significa
+            que las cosas se están haciendo correctamente y de acuerdo a las normas. Registrar las
+            conformidades es tan importante como registrar los problemas, porque permite reconocer las
+            buenas prácticas, motivar a los equipos y tenerlas como referencia para mejorar otras áreas.
+            Una empresa con muchas conformidades transmite confianza a sus clientes y socios.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> El inspector de sanidad revisa la cocina del restaurante y la nevera está a la temperatura correcta. Eso es una conformidad: cumple exactamente con la norma.</span>
+          </div>
+        </article>
+
+        <!-- 10 · No conformidad -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-rose" aria-hidden="true">❌</div>
+          <p class="card-num">Concepto 10</p>
+          <h3 class="card-title">No Conformidad</h3>
+          <p class="card-desc">
+            Una no conformidad es el incumplimiento de un requisito o criterio establecido. Puede ser
+            menor (un detalle que no se cumple, pero no genera un riesgo grave) o mayor (un fallo
+            importante que puede afectar la calidad, seguridad o legalidad del proceso). No es
+            necesariamente un error grave o una catástrofe; más bien es una señal de que algo necesita
+            corregirse. Cuando se detecta una no conformidad, la organización debe analizarla, encontrar
+            la causa raíz y tomar acciones correctivas para evitar que vuelva a ocurrir.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> El restaurante tiene la nevera a 12°C, pero la norma exige máximo 4°C. Eso es una no conformidad: hay un incumplimiento que debe corregirse cuanto antes.</span>
+          </div>
+        </article>
+
+        <!-- 11 · Oportunidad de mejora -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-orange" aria-hidden="true">🚀</div>
+          <p class="card-num">Concepto 11</p>
+          <h3 class="card-title">Oportunidad de Mejora</h3>
+          <p class="card-desc">
+            Es una observación del auditor que no implica un incumplimiento grave, pero señala una
+            situación que podría hacerse mejor, de forma más eficiente, más segura o más económica.
+            No es una obligación corregirla de inmediato como sí lo es una no conformidad, pero si
+            se aprovecha, la organización puede evolucionar y fortalecerse. Las oportunidades de mejora
+            son muy valiosas porque muestran el potencial de crecimiento y permiten a las empresas
+            adelantarse a problemas futuros antes de que se conviertan en no conformidades reales.
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Tu tarea está completa y bien hecha (conformidad), pero el profe sugiere usar colores para que sea más visual y fácil de leer. Esa sugerencia es una oportunidad de mejora.</span>
+          </div>
+        </article>
+
+        <!-- 12 · Ley 1581 -->
+        <article class="card reveal" role="listitem">
+          <div class="card-icon ic-sky" aria-hidden="true">🇨🇴</div>
+          <p class="card-num">Concepto 12</p>
+          <h3 class="card-title">Ley 1581 de 2012 — Colombia</h3>
+          <p class="card-desc">
+            Es la Ley de Protección de Datos Personales de Colombia. Se encarga de regular cómo las
+            empresas, entidades y personas pueden recolectar, almacenar, usar y compartir los datos
+            personales de otras personas (nombre, cédula, dirección, correo, teléfono, etc.).
+            La ley establece que nadie puede usar tus datos sin tu autorización expresa, y que tienes
+            el derecho a saber qué datos tienen de ti, para qué los usan y a pedir que los eliminen
+            si ya no son necesarios. Las empresas que incumplan esta ley pueden recibir multas muy altas
+            por parte de la Superintendencia de Industria y Comercio (SIC).
+          </p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="ex-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Cuando te registras en una app y aparece un mensaje diciendo "acepto el tratamiento de mis datos personales", eso es la Ley 1581 en acción: la app te está pidiendo permiso antes de usar tu información.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       COMPARACIÓN
+  ===================== -->
+  <section class="comparison-section" aria-labelledby="comp-titulo">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">⚡ Comparación</span>
+        <h2 id="comp-titulo" class="section-title">¿Qué pasa con y sin auditoría?</h2>
+        <p class="section-sub">Como ver el antes y el después de ordenar tu cuarto — pero en una empresa.</p>
+      </div>
+
+      <div class="comparison-grid">
+
+        <!-- Sin auditoría -->
+        <div class="comp-card bad reveal" role="region" aria-label="Sistema sin auditoría">
+          <span class="comp-badge">😰 Sin Auditoría</span>
+          <h3 class="comp-title">Sistema sin revisión</h3>
+          <ul class="comp-list">
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>Nadie sabe con certeza si los procesos funcionan bien o están fallando.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>Los errores crecen silenciosamente hasta que es demasiado tarde para corregirlos.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>Los datos personales de los clientes pueden estar en riesgo sin que nadie lo note.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>La empresa puede recibir sanciones legales por no cumplir normas como la Ley 1581.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>Cada persona hace las cosas a su manera, sin estándares ni control de calidad.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✗</span><span>Se pierde la confianza de clientes y socios al no poder demostrar buenas prácticas.</span></li>
+          </ul>
+          <div class="comp-watermark" aria-hidden="true">🔥</div>
+        </div>
+
+        <!-- Con auditoría -->
+        <div class="comp-card good reveal" role="region" aria-label="Sistema con auditoría">
+          <span class="comp-badge">😊 Con Auditoría</span>
+          <h3 class="comp-title">Sistema revisado y ordenado</h3>
+          <ul class="comp-list">
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>Todo el equipo sabe exactamente qué debe hacer, cómo hacerlo y cómo medirlo.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>Los errores se detectan a tiempo y se corrigen antes de que causen daños mayores.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>Los datos personales están protegidos y gestionados conforme a la Ley 1581.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>Hay documentos y registros que prueban el cumplimiento legal ante cualquier entidad.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>Todos siguen los mismos estándares: más calidad, más seguridad y menos reprocesos.</span></li>
+            <li><span class="comp-dot" aria-hidden="true">✓</span><span>La empresa gana credibilidad, confianza y ventajas competitivas en el mercado.</span></li>
+          </ul>
+          <div class="comp-watermark" aria-hidden="true">🏆</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CHECKLIST + CTA FINAL
+  ===================== -->
+  <section class="checklist-section" aria-labelledby="checklist-titulo">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">✅ Lo que aprendiste</span>
+        <h2 id="checklist-titulo" class="section-title">¡Ya lo sabes todo!</h2>
+        <p class="section-sub">
+          Si llegaste hasta aquí, ya tienes los 12 conceptos clave de la auditoría de sistemas.
+          ¡Eso es un gran logro!
+        </p>
+      </div>
+
+      <div class="checklist-grid" role="list" aria-label="Conceptos aprendidos">
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🌍</div><span class="check-text">Qué es la ISO y para qué sirve</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🔄</div><span class="check-text">Auditoría interna vs. auditoría externa</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">📄</div><span class="check-text">Qué es la documentación de referencia</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🎯</div><span class="check-text">Qué significa el alcance de una auditoría</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">👤</div><span class="check-text">Qué hace el auditor de calidad</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">📅</div><span class="check-text">Qué es un programa de auditoría</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">⚖️</div><span class="check-text">Qué son los criterios de auditoría</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🔎</div><span class="check-text">Qué es un hallazgo de auditoría</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">✅</div><span class="check-text">Qué significa una conformidad</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">❌</div><span class="check-text">Qué es una no conformidad</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🚀</div><span class="check-text">Qué es una oportunidad de mejora</span></div>
+        <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🇨🇴</div><span class="check-text">Para qué sirve la Ley 1581 de 2012</span></div>
+      </div>
+
+      <!-- CTA Final -->
+      <div class="cta-box reveal" role="complementary" aria-label="Llamado a la acción final">
+        <h2>¡Ya eres un experto! 🎉</h2>
+        <p>
+          Entender la auditoría de sistemas es el primer paso para construir organizaciones más honestas,
+          seguras y organizadas. Ahora puedes explicarle estos conceptos a cualquier persona.
+        </p>
+        <a href="#conceptos" class="cta-btn" aria-label="Volver al inicio a repasar los conceptos">
+          🔄 Repasar los conceptos
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer role="contentinfo">
+    <p>Hecho con ❤️ para que aprender sea <strong>fácil y divertido</strong> &middot; AuditaFácil &copy; 2025</p>
+  </footer>
+
+  <!-- JS al final del body -->
+  <script src="main.js"></script>
+</body>
+</html>
