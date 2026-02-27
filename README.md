@@ -6,7 +6,7 @@
 
 ## 📸 Vista Previa
 
-![Preview](./img/home.png)
+![Preview](img/home.png)
 
 ---
 
