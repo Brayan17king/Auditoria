@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditoría de Sistemas Explicada Fácil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ===========================
+       VARIABLES & RESET
+    =========================== */
+    :root {
+      --blue-deep: #1a2f5a;
+      --blue-mid: #2d5be3;
+      --blue-soft: #4f8bff;
+      --blue-pale: #e8f0fe;
+      --blue-ice: #f0f5ff;
+      --gray-100: #f7f8fc;
+      --gray-200: #eef0f6;
+      --gray-400: #9aa3b8;
+      --gray-600: #5a6480;
+      --gray-800: #2c3250;
+      --white: #ffffff;
+      --accent-teal: #00c9b1;
+      --accent-amber: #ffb547;
+      --accent-rose: #ff6b8a;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --shadow-soft: 0 4px 24px rgba(26,47,90,0.08);
+      --shadow-card: 0 8px 40px rgba(26,47,90,0.12);
+      --shadow-hover: 0 16px 60px rgba(45,91,227,0.18);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--gray-800);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===========================
+       ANIMATIONS
+    =========================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+    @keyframes pulseRing {
+      0%   { transform: scale(1); opacity: 0.4; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .fade-up   { animation: fadeUp 0.7s ease forwards; }
+    .fade-in   { animation: fadeIn 0.7s ease forwards; }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    /* Intersection Observer classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===========================
+       LAYOUT HELPERS
+    =========================== */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 96px 0; }
+
+    /* ===========================
+       NAV
+    =========================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 24px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(26,47,90,0.06);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue-deep);
+      text-decoration: none;
+    }
+    .nav-logo .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--blue-mid);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .nav-cta {
+      background: var(--blue-mid);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .nav-cta:hover {
+      background: var(--blue-deep);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(45,91,227,0.35);
+    }
+
+    /* ===========================
+       HERO SECTION
+    =========================== */
+    .hero {
+      min-height: 100vh;
+      padding-top: 100px;
+      background: linear-gradient(160deg, var(--blue-ice) 0%, var(--white) 55%, #f8fbff 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(45,91,227,0.07) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,201,177,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-pale);
+      color: var(--blue-mid);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--blue-mid);
+      border-radius: 50%;
+      position: relative;
+    }
+    .hero-badge::after {
+      content: '';
+      position: absolute;
+      width: 8px; height: 8px;
+      background: var(--blue-mid);
+      border-radius: 50%;
+      animation: pulseRing 1.5s ease-out infinite;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--blue-deep);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue-mid);
+      position: relative;
+    }
+    .hero h1 em::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 2px; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue-soft), var(--accent-teal));
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 36px;
+      max-width: 420px;
+      font-weight: 400;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--blue-mid), var(--blue-soft));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 8px 32px rgba(45,91,227,0.3);
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(45,91,227,0.4);
+    }
+    .hero-cta-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    .hero-cta:hover .hero-cta-arrow { transform: translateX(4px); }
+
+    /* Hero illustration */
+    .hero-illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: float 4s ease-in-out infinite;
+    }
+    .hero-svg {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+    }
+
+    /* Floating stats */
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      letter-spacing: -0.03em;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      font-weight: 500;
+    }
+    .stat-divider {
+      width: 1px;
+      background: var(--gray-200);
+      align-self: stretch;
+    }
+
+    /* ===========================
+       SECTION HEADERS
+    =========================== */
+    .section-label {
+      display: inline-block;
+      color: var(--blue-mid);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: var(--blue-deep);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 540px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-header .section-sub { margin: 0 auto; }
+
+    /* ===========================
+       CONCEPTS SECTION
+    =========================== */
+    .concepts-bg {
+      background: var(--gray-100);
+    }
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .concept-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(26,47,90,0.05);
+      transition: var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .concept-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-mid), var(--accent-teal));
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .concept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(45,91,227,0.12);
+    }
+    .concept-card:hover::before { opacity: 1; }
+
+    .card-icon-wrap {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .concept-card:hover .card-icon-wrap { transform: scale(1.1) rotate(3deg); }
+
+    .card-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .card-example {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: var(--blue-ice);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--blue-deep);
+      line-height: 1.5;
+    }
+    .card-example-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Icon colors */
+    .ic-blue   { background: rgba(45,91,227,0.1); }
+    .ic-teal   { background: rgba(0,201,177,0.1); }
+    .ic-amber  { background: rgba(255,181,71,0.12); }
+    .ic-rose   { background: rgba(255,107,138,0.1); }
+    .ic-violet { background: rgba(124,77,255,0.1); }
+    .ic-green  { background: rgba(34,197,94,0.1); }
+    .ic-orange { background: rgba(251,146,60,0.1); }
+    .ic-sky    { background: rgba(14,165,233,0.1); }
+
+    /* ===========================
+       COMPARISON SECTION
+    =========================== */
+    .comparison-section { background: var(--white); }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .comparison-card {
+      border-radius: var(--radius-md);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .comparison-card.bad {
+      background: linear-gradient(145deg, #fff5f7, #fff0f3);
+      border: 2px solid #ffd6de;
+    }
+    .comparison-card.good {
+      background: linear-gradient(145deg, #f0fdf9, #e8f8ff);
+      border: 2px solid #a7f3d0;
+    }
+    .comp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .bad .comp-badge  { background: #fecdd3; color: #be123c; }
+    .good .comp-badge { background: #bbf7d0; color: #065f46; }
+    .comp-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .bad  .comp-title { color: #9f1239; }
+    .good .comp-title { color: #064e3b; }
+    .comp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .bad  .comp-list li { color: #7f1d1d; }
+    .good .comp-list li { color: #14532d; }
+    .comp-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .bad  .comp-dot { background: #fca5a5; color: #b91c1c; }
+    .good .comp-dot { background: #6ee7b7; color: #059669; }
+    .comp-big-icon {
+      position: absolute;
+      bottom: 20px; right: 24px;
+      font-size: 72px;
+      opacity: 0.08;
+    }
+
+    /* ===========================
+       CHECKLIST SECTION
+    =========================== */
+    .checklist-section {
+      background: linear-gradient(160deg, var(--blue-ice) 0%, var(--white) 100%);
+    }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(26,47,90,0.04);
+      transition: var(--transition);
+    }
+    .check-item:hover {
+      transform: translateX(4px);
+      border-color: rgba(45,91,227,0.15);
+    }
+    .check-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--blue-mid), var(--accent-teal));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .check-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-800);
+      line-height: 1.4;
+    }
+
+    /* Final CTA */
+    .final-cta-box {
+      background: linear-gradient(135deg, var(--blue-deep) 0%, #1e3a8a 100%);
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-box::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(79,139,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .final-cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(0,201,177,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .final-cta-box h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+    .final-cta-box p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      margin-bottom: 36px;
+      max-width: 440px;
+      margin-left: auto; margin-right: auto;
+      position: relative; z-index: 1;
+    }
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--blue-deep);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      position: relative; z-index: 1;
+    }
+    .final-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--blue-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+    }
+    footer strong { color: rgba(255,255,255,0.8); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding-top: 20px;
+      }
+      .hero-sub { max-width: 100%; }
+      .hero-stats { justify-content: center; }
+      .hero-cta { margin: 0 auto; }
+      .hero-illustration { order: -1; }
+      .hero-svg { max-width: 300px; }
+      .comparison-grid { grid-template-columns: 1fr; gap: 20px; }
+      .concepts-grid { grid-template-columns: 1fr; }
+      .final-cta-box { padding: 40px 24px; }
+      nav { padding: 12px 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .checklist-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===========================
+       NAV
+  =========================== -->
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Inicio">
+        <div class="logo-icon" aria-hidden="true">🔍</div>
+        AuditaFácil
+      </a>
+      <a href="#conceptos" class="nav-cta">Aprender Fácil</a>
+    </div>
+  </nav>
+
+  <!-- ===========================
+       HERO
+  =========================== -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge fade-up" role="text">📚 Guía para todos</div>
+        <h1 id="hero-title" class="fade-up delay-1">
+          Auditoría de Sistemas<br/><em>Explicada Fácil</em>
+        </h1>
+        <p class="hero-sub fade-up delay-2">
+          ¿Nunca has escuchado estas palabras y te suenan complicadas?<br/>
+          Aquí te lo explicamos con ejemplos del día a día. 😊
+        </p>
+        <a href="#conceptos" class="hero-cta fade-up delay-3" aria-label="Ir a la sección de conceptos">
+          Empezar a aprender
+          <span class="hero-cta-arrow" aria-hidden="true">→</span>
+        </a>
+        <div class="hero-stats fade-up delay-4" role="group" aria-label="Estadísticas rápidas">
+          <div class="stat-item">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Conceptos clave</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Fácil de entender</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-num">0</span>
+            <span class="stat-label">Tecnicismos aburridos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SVG Illustration -->
+      <div class="hero-illustration fade-in delay-2" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Background card -->
+          <rect x="40" y="40" width="380" height="320" rx="28" fill="#e8f0fe" opacity="0.5"/>
+          <!-- Main document -->
+          <rect x="80" y="70" width="200" height="260" rx="16" fill="white" filter="url(#shadow1)"/>
+          <defs>
+            <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2f5a" flood-opacity="0.1"/>
+            </filter>
+            <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1a2f5a" flood-opacity="0.12"/>
+            </filter>
+          </defs>
+          <!-- Doc lines -->
+          <rect x="106" y="100" width="140" height="10" rx="5" fill="#e8f0fe"/>
+          <rect x="106" y="120" width="110" height="8" rx="4" fill="#eef0f6"/>
+          <rect x="106" y="140" width="130" height="8" rx="4" fill="#eef0f6"/>
+          <rect x="106" y="160" width="90" height="8" rx="4" fill="#eef0f6"/>
+          <!-- Checkmarks -->
+          <rect x="106" y="188" width="148" height="28" rx="8" fill="#e8f0fe"/>
+          <circle cx="120" cy="202" r="8" fill="#2d5be3"/>
+          <text x="116.5" y="206.5" font-size="10" fill="white" font-family="sans-serif">✓</text>
+          <rect x="135" y="197" width="100" height="6" rx="3" fill="#c5d5fb"/>
+          <rect x="106" y="224" width="148" height="28" rx="8" fill="#e8f8f5"/>
+          <circle cx="120" cy="238" r="8" fill="#00c9b1"/>
+          <text x="116.5" y="242.5" font-size="10" fill="white" font-family="sans-serif">✓</text>
+          <rect x="135" y="233" width="80" height="6" rx="3" fill="#a7f3d0"/>
+          <rect x="106" y="260" width="148" height="28" rx="8" fill="#fff5f7"/>
+          <circle cx="120" cy="274" r="8" fill="#ff6b8a"/>
+          <text x="116.5" y="278.5" font-size="10" fill="white" font-family="sans-serif">!</text>
+          <rect x="135" y="269" width="95" height="6" rx="3" fill="#ffd6de"/>
+          <!-- Magnifier -->
+          <circle cx="320" cy="180" r="60" fill="white" filter="url(#shadow2)"/>
+          <circle cx="320" cy="180" r="44" fill="#f0f5ff" stroke="#2d5be3" stroke-width="4"/>
+          <rect x="302" y="170" width="36" height="6" rx="3" fill="#2d5be3" opacity="0.5"/>
+          <rect x="302" y="182" width="28" height="6" rx="3" fill="#2d5be3" opacity="0.3"/>
+          <rect x="302" y="194" width="32" height="6" rx="3" fill="#2d5be3" opacity="0.2"/>
+          <line x1="352" y1="212" x2="376" y2="240" stroke="#1a2f5a" stroke-width="8" stroke-linecap="round"/>
+          <line x1="352" y1="212" x2="376" y2="240" stroke="#2d5be3" stroke-width="5" stroke-linecap="round"/>
+          <!-- Floating badge -->
+          <rect x="280" y="80" width="120" height="40" rx="20" fill="#2d5be3" filter="url(#shadow2)"/>
+          <text x="340" y="106" font-size="13" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">✓ Auditado</text>
+          <!-- Small star -->
+          <circle cx="390" cy="310" r="22" fill="#ffb547" opacity="0.9"/>
+          <text x="390" y="318" font-size="18" text-anchor="middle" font-family="sans-serif">⭐</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CONCEPTS SECTION
+  =========================== -->
+  <section class="concepts-bg" id="conceptos" aria-labelledby="conceptos-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">📖 Conceptos</span>
+        <h2 id="conceptos-title" class="section-title">Los 12 conceptos que necesitas saber</h2>
+        <p class="section-sub">Cada concepto explicado con palabras simples y ejemplos de tu vida diaria.</p>
+      </div>
+
+      <div class="concepts-grid" role="list">
+
+        <!-- Card 1: ISO -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-blue" aria-hidden="true">🌍</div>
+          <div class="card-num">01</div>
+          <h3 class="card-title">¿Qué es la ISO?</h3>
+          <p class="card-desc">Es una organización mundial que crea <strong>reglas y normas</strong> para que las empresas funcionen bien, sean seguras y de calidad. Como el árbitro de un partido: pone las reglas para que todos jueguen igual.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Cuando compras un jugo y la etiqueta dice que cumple ciertas normas, eso fue revisado con reglas de la ISO.</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Auditoría interna vs externa -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-teal" aria-hidden="true">🔄</div>
+          <div class="card-num">02</div>
+          <h3 class="card-title">Auditoría Interna vs. Externa</h3>
+          <p class="card-desc"><strong>Interna:</strong> alguien de la misma empresa revisa si todo está bien. <strong>Externa:</strong> una persona de afuera, independiente, viene a revisar sin favoritismos.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Interna = la mamá revisa tu cuarto. Externa = la abuela visita y también lo revisa.</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Documentación de referencia -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-amber" aria-hidden="true">📄</div>
+          <div class="card-num">03</div>
+          <h3 class="card-title">Documentación de Referencia</h3>
+          <p class="card-desc">Son los papeles, normas o manuales que el auditor usa para <strong>comparar y saber qué está bien o mal</strong>. Como el libro de recetas cuando cocinas.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Si vas al colegio, el reglamento escolar es la documentación de referencia para saber qué está permitido.</span>
+          </div>
+        </article>
+
+        <!-- Card 4: Alcance -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-violet" aria-hidden="true">🎯</div>
+          <div class="card-num">04</div>
+          <h3 class="card-title">Alcance de la Auditoría</h3>
+          <p class="card-desc">Define <strong>hasta dónde va a llegar</strong> la revisión. Qué áreas, sistemas o procesos se van a revisar y cuáles no. Pone los límites del trabajo.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> "Solo voy a revisar tu mochila, no tu habitación entera." Eso es el alcance.</span>
+          </div>
+        </article>
+
+        <!-- Card 5: Auditor de calidad -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-blue" aria-hidden="true">👤</div>
+          <div class="card-num">05</div>
+          <h3 class="card-title">Auditor de Calidad</h3>
+          <p class="card-desc">Es la persona entrenada para <strong>revisar, evaluar y reportar</strong> si una empresa cumple las normas. Es objetivo, imparcial y busca la verdad.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Como el inspector de salud que visita un restaurante para ver si la cocina está limpia y todo es seguro.</span>
+          </div>
+        </article>
+
+        <!-- Card 6: Programa de auditoría -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-teal" aria-hidden="true">📅</div>
+          <div class="card-num">06</div>
+          <h3 class="card-title">Programa de Auditoría</h3>
+          <p class="card-desc">Es el <strong>plan completo</strong> que organiza cuándo, dónde, a quién y cómo se van a realizar las auditorías. Es el calendario y el mapa del trabajo del auditor.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Como cuando el profe planea los exámenes del año: qué materias, qué fechas y quién aplica cada prueba.</span>
+          </div>
+        </article>
+
+        <!-- Card 7: Criterios -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-rose" aria-hidden="true">⚖️</div>
+          <div class="card-num">07</div>
+          <h3 class="card-title">Criterios de Auditoría</h3>
+          <p class="card-desc">Son las <strong>reglas y estándares</strong> con los que se mide si algo está bien o mal. Son el punto de comparación. Sin criterios, no se puede juzgar nada.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> En la escuela, la escala de notas (1 al 5) es el criterio para saber si aprobaste o no.</span>
+          </div>
+        </article>
+
+        <!-- Card 8: Hallazgo -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-amber" aria-hidden="true">🔎</div>
+          <div class="card-num">08</div>
+          <h3 class="card-title">Hallazgo de Auditoría</h3>
+          <p class="card-desc">Es <strong>lo que el auditor descubre</strong> al comparar la realidad con las reglas. Puede ser algo bueno o algo que necesita mejorar. Es el resultado de la revisión.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Revisas tu mochila y encuentras que falta el cuaderno de matemáticas. Ese es el hallazgo.</span>
+          </div>
+        </article>
+
+        <!-- Card 9: Conformidad -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-green" aria-hidden="true">✅</div>
+          <div class="card-num">09</div>
+          <h3 class="card-title">Conformidad</h3>
+          <p class="card-desc">Cuando algo cumple <strong>exactamente con las reglas</strong> establecidas. Todo está en orden, como debe ser. Es una señal positiva en la auditoría.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> El profe revisó tu tarea y está completa y bien hecha. Eso es conformidad: cumpliste con lo pedido.</span>
+          </div>
+        </article>
+
+        <!-- Card 10: No conformidad -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-rose" aria-hidden="true">❌</div>
+          <div class="card-num">10</div>
+          <h3 class="card-title">No Conformidad</h3>
+          <p class="card-desc">Es cuando algo <strong>no cumple con las reglas</strong>. Se encontró un error, falla o incumplimiento. No es catastrófico, es una oportunidad de corregirse.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> El restaurante tiene la nevera demasiado caliente. Eso incumple la norma de temperatura: es una no conformidad.</span>
+          </div>
+        </article>
+
+        <!-- Card 11: Oportunidad de mejora -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-orange" aria-hidden="true">🚀</div>
+          <div class="card-num">11</div>
+          <h3 class="card-title">Oportunidad de Mejora</h3>
+          <p class="card-desc">No es un error grave, pero el auditor <strong>sugiere hacerlo mejor</strong>. Cumple las reglas, pero podría ser más eficiente, rápido o seguro.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Tu tarea está bien, pero el profe sugiere usar más colores para que sea más clara. Eso es una oportunidad de mejora.</span>
+          </div>
+        </article>
+
+        <!-- Card 12: Ley 1581 -->
+        <article class="concept-card reveal" role="listitem">
+          <div class="card-icon-wrap ic-sky" aria-hidden="true">🇨🇴</div>
+          <div class="card-num">12</div>
+          <h3 class="card-title">Ley 1581 de 2012 (Colombia)</h3>
+          <p class="card-desc">Es la ley colombiana que <strong>protege tus datos personales</strong>. Dice que nadie puede usar tu nombre, foto, dirección o número sin tu permiso. Tus datos son tuyos.</p>
+          <div class="card-example" aria-label="Ejemplo práctico">
+            <span class="card-example-icon">💡</span>
+            <span><strong>Ejemplo:</strong> Como cuando un juego pide tu correo y debe decirte para qué lo va a usar. Esa es la ley 1581 en acción.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       COMPARISON SECTION
+  =========================== -->
+  <section class="comparison-section" aria-labelledby="comparison-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">⚡ Comparación</span>
+        <h2 id="comparison-title" class="section-title">¿Qué pasa con y sin auditoría?</h2>
+        <p class="section-sub">Como el antes y después de ordenar tu cuarto… pero en una empresa.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Sin auditoría -->
+        <div class="comparison-card bad reveal" role="region" aria-label="Sistema sin auditoría">
+          <span class="comp-badge">😰 Sin Auditoría</span>
+          <h3 class="comp-title">Sistema sin revisión</h3>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>Nadie sabe si los procesos funcionan bien o están rotos.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>Los errores crecen sin que nadie los note, hasta que es tarde.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>Los datos personales pueden estar en peligro sin que lo sepas.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>La empresa puede perder dinero y confianza de sus clientes.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>No hay evidencia de que se cumplen las normas legales.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✗</span>
+              <span>Cada persona hace las cosas a su manera, sin control ni estándar.</span>
+            </li>
+          </ul>
+          <div class="comp-big-icon" aria-hidden="true">🔥</div>
+        </div>
+
+        <!-- Con auditoría -->
+        <div class="comparison-card good reveal" role="region" aria-label="Sistema con auditoría">
+          <span class="comp-badge">😊 Con Auditoría</span>
+          <h3 class="comp-title">Sistema revisado y ordenado</h3>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>Todo el mundo sabe qué debe hacer y cómo medirlo.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>Los errores se detectan temprano y se corrigen a tiempo.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>Los datos personales están protegidos y bien resguardados.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>La empresa gana confianza, clientes y credibilidad.</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>Hay documentos que prueban que se cumple la ley (como la 1581).</span>
+            </li>
+            <li>
+              <span class="comp-dot" aria-hidden="true">✓</span>
+              <span>Todos siguen los mismos estándares: orden, calidad y seguridad.</span>
+            </li>
+          </ul>
+          <div class="comp-big-icon" aria-hidden="true">🏆</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CHECKLIST & FINAL CTA
+  =========================== -->
+  <section class="checklist-section" aria-labelledby="checklist-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✅ Resumen</span>
+        <h2 id="checklist-title" class="section-title">Lo que ya sabes</h2>
+        <p class="section-sub">¡Felicitaciones! Si leíste hasta aquí, ya conoces los conceptos clave de la auditoría de sistemas.</p>
+      </div>
+
+      <div class="checklist-grid" role="list" aria-label="Lista de conceptos aprendidos">
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🌍</div>
+          <span class="check-text">Qué es y para qué sirve la ISO</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🔄</div>
+          <span class="check-text">Diferencia entre auditoría interna y externa</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">📄</div>
+          <span class="check-text">Qué es la documentación de referencia</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🎯</div>
+          <span class="check-text">Qué significa el alcance de una auditoría</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">👤</div>
+          <span class="check-text">Qué hace el auditor de calidad</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">📅</div>
+          <span class="check-text">Qué es un programa de auditoría</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">⚖️</div>
+          <span class="check-text">Qué son los criterios de auditoría</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🔎</div>
+          <span class="check-text">Qué es un hallazgo de auditoría</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">✅</div>
+          <span class="check-text">Qué significa conformidad</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">❌</div>
+          <span class="check-text">Qué es una no conformidad</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🚀</div>
+          <span class="check-text">Qué es una oportunidad de mejora</span>
+        </div>
+        <div class="check-item reveal" role="listitem">
+          <div class="check-icon" aria-hidden="true">🇨🇴</div>
+          <span class="check-text">Para qué sirve la Ley 1581 de 2012</span>
+        </div>
+      </div>
+
+      <!-- Final CTA Box -->
+      <div class="final-cta-box reveal" role="complementary" aria-label="Llamado a la acción final">
+        <h2>¡Ya eres un experto! 🎉</h2>
+        <p>Entender la auditoría de sistemas es el primer paso para construir empresas más honestas, organizadas y seguras. Tú puedes marcar la diferencia.</p>
+        <a href="#conceptos" class="final-cta-btn" aria-label="Volver a repasar los conceptos">
+          🔄 Repasar los conceptos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+  =========================== -->
+  <footer role="contentinfo">
+    <p>Hecho con ❤️ para que aprender sea <strong>fácil y divertido</strong> · AuditaFácil © 2025</p>
+  </footer>
+
+  <!-- ===========================
+       JAVASCRIPT
+  =========================== -->
+  <script>
+    // Intersection Observer for reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger delay based on position in parent
+          const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+          const index = siblings.indexOf(entry.target);
+          const delay = (index % 4) * 80; // stagger within rows
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Smooth nav highlight
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.style.boxShadow = '0 4px 30px rgba(26,47,90,0.1)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
