@@ -4,22 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Guía visual y sencilla para entender los conceptos clave de la auditoría de sistemas. Sin tecnicismos, con ejemplos del día a día." />
-
   <title>AuditaFácil — Auditoría de Sistemas Explicada Fácil</title>
-
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- =====================
-       NAVBAR
-  ===================== -->
+  <!-- NAVBAR -->
   <nav aria-label="Navegación principal">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Inicio AuditaFácil">
@@ -30,54 +23,33 @@
     </div>
   </nav>
 
-  <!-- =====================
-       HERO
-  ===================== -->
+  <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="container">
       <div class="hero-inner">
-
-        <!-- Texto -->
         <div>
           <div class="hero-badge fade-up" role="text">
             <span class="pulse-dot" aria-hidden="true"></span>
             📚 Guía para todos
           </div>
-
           <h1 id="hero-title" class="fade-up delay-1">
             Auditoría de Sistemas<br />
             <span class="highlight">Explicada Fácil</span>
           </h1>
-
           <p class="hero-sub fade-up delay-2">
-            ¿Estas palabras te suenan complicadas? Aquí te explicamos todo con ejemplos simples de tu vida diaria.
-            Sin tecnicismos, sin aburrición. 😊
+            ¿Estas palabras te suenan complicadas? Aquí te explicamos todo con ejemplos simples de tu vida diaria. Sin tecnicismos, sin aburrición. 😊
           </p>
-
           <a href="#conceptos" class="hero-cta fade-up delay-3" aria-label="Ir a la sección de conceptos">
-            Empezar a aprender
-            <span class="arrow" aria-hidden="true">→</span>
+            Empezar a aprender <span class="arrow" aria-hidden="true">→</span>
           </a>
-
           <div class="hero-stats fade-up delay-4" role="group" aria-label="Datos rápidos">
-            <div class="stat">
-              <span class="stat-num">12</span>
-              <span class="stat-label">Conceptos clave</span>
-            </div>
+            <div class="stat"><span class="stat-num">12</span><span class="stat-label">Conceptos clave</span></div>
             <div class="stat-sep" aria-hidden="true"></div>
-            <div class="stat">
-              <span class="stat-num">100%</span>
-              <span class="stat-label">Fácil de entender</span>
-            </div>
+            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Fácil de entender</span></div>
             <div class="stat-sep" aria-hidden="true"></div>
-            <div class="stat">
-              <span class="stat-num">0</span>
-              <span class="stat-label">Tecnicismos aburridos</span>
-            </div>
+            <div class="stat"><span class="stat-num">0</span><span class="stat-label">Tecnicismos aburridos</span></div>
           </div>
         </div>
-
-        <!-- Ilustración SVG -->
         <div class="hero-visual" aria-hidden="true">
           <svg class="hero-svg" viewBox="0 0 460 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -89,8 +61,7 @@
             <rect x="106" y="100" width="140" height="10" rx="5" fill="#e8f0fe"/>
             <rect x="106" y="120" width="110" height="8" rx="4" fill="#eef0f6"/>
             <rect x="106" y="140" width="130" height="8" rx="4" fill="#eef0f6"/>
-            <rect x="106" y="160" width="90"  height="8" rx="4" fill="#eef0f6"/>
-            <!-- Check rows -->
+            <rect x="106" y="160" width="90" height="8" rx="4" fill="#eef0f6"/>
             <rect x="106" y="188" width="148" height="28" rx="8" fill="#e8f0fe"/>
             <circle cx="120" cy="202" r="8" fill="#2d5be3"/>
             <text x="116" y="207" font-size="10" fill="white" font-family="sans-serif">✓</text>
@@ -103,271 +74,540 @@
             <circle cx="120" cy="274" r="8" fill="#ff6b8a"/>
             <text x="117" y="279" font-size="11" fill="white" font-family="sans-serif">!</text>
             <rect x="135" y="269" width="95" height="6" rx="3" fill="#ffd6de"/>
-            <!-- Lupa -->
             <circle cx="320" cy="180" r="60" fill="white" filter="url(#s2)"/>
             <circle cx="320" cy="180" r="44" fill="#f0f5ff" stroke="#2d5be3" stroke-width="4"/>
             <rect x="302" y="170" width="36" height="6" rx="3" fill="#2d5be3" opacity="0.5"/>
             <rect x="302" y="182" width="28" height="6" rx="3" fill="#2d5be3" opacity="0.3"/>
             <rect x="302" y="194" width="32" height="6" rx="3" fill="#2d5be3" opacity="0.2"/>
             <line x1="352" y1="212" x2="378" y2="242" stroke="#2d5be3" stroke-width="6" stroke-linecap="round"/>
-            <!-- Badge auditado -->
             <rect x="278" y="78" width="122" height="40" rx="20" fill="#2d5be3" filter="url(#s2)"/>
             <text x="339" y="104" font-size="13" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">✓ Auditado</text>
-            <!-- Estrella -->
             <circle cx="390" cy="310" r="24" fill="#ffb547" opacity="0.9"/>
             <text x="390" y="318" font-size="18" text-anchor="middle" font-family="sans-serif">⭐</text>
           </svg>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- =====================
-       CONCEPTOS
-  ===================== -->
+  <!-- CONCEPTOS -->
   <section class="concepts-section" id="conceptos" aria-labelledby="conceptos-titulo">
     <div class="container">
-
       <div class="section-header reveal">
         <span class="section-tag">📖 Conceptos</span>
         <h2 id="conceptos-titulo" class="section-title">Los 12 conceptos que necesitas saber</h2>
-        <p class="section-sub">
-          Cada concepto explicado con palabras simples, con detalle suficiente para que quede claro,
-          y con un ejemplo de tu vida cotidiana.
-        </p>
+        <p class="section-sub">Cada concepto explicado con palabras simples, con detalle suficiente para que quede claro, y con un ejemplo de tu vida cotidiana.</p>
       </div>
 
       <div class="concepts-grid" role="list">
 
-        <!-- 01 · ISO -->
+        <!-- 01 ISO -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e8f0fe"/>
+              <!-- Globo terráqueo -->
+              <circle cx="80" cy="70" r="40" fill="#2d5be3" opacity="0.15"/>
+              <circle cx="80" cy="70" r="34" fill="white" stroke="#2d5be3" stroke-width="2.5"/>
+              <ellipse cx="80" cy="70" rx="14" ry="34" fill="none" stroke="#2d5be3" stroke-width="1.5" opacity="0.5"/>
+              <line x1="46" y1="70" x2="114" y2="70" stroke="#2d5be3" stroke-width="1.5" opacity="0.5"/>
+              <line x1="50" y1="55" x2="110" y2="55" stroke="#2d5be3" stroke-width="1" opacity="0.3"/>
+              <line x1="50" y1="85" x2="110" y2="85" stroke="#2d5be3" stroke-width="1" opacity="0.3"/>
+              <!-- Banderas/pins en el globo -->
+              <circle cx="68" cy="58" r="4" fill="#2d5be3"/>
+              <circle cx="90" cy="75" r="4" fill="#00c9b1"/>
+              <circle cx="75" cy="82" r="4" fill="#ffb547"/>
+              <!-- ISO badge -->
+              <rect x="140" y="30" width="110" height="80" rx="12" fill="white" filter="drop-shadow(0 4px 12px rgba(26,47,90,0.1))"/>
+              <rect x="152" y="42" width="86" height="12" rx="6" fill="#2d5be3"/>
+              <text x="195" y="53" font-size="9" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">ISO 9001</text>
+              <rect x="152" y="62" width="60" height="7" rx="3" fill="#e8f0fe"/>
+              <rect x="152" y="75" width="74" height="7" rx="3" fill="#e8f0fe"/>
+              <rect x="152" y="88" width="50" height="7" rx="3" fill="#e8f0fe"/>
+              <!-- Estrella certificado -->
+              <circle cx="224" cy="95" r="10" fill="#ffb547"/>
+              <text x="224" y="99" font-size="10" text-anchor="middle" font-family="sans-serif">★</text>
+            </svg>
+          </div>
           <div class="card-icon ic-blue" aria-hidden="true">🌍</div>
           <p class="card-num">Concepto 01</p>
           <h3 class="card-title">¿Qué es la ISO y de qué se encarga?</h3>
-          <p class="card-desc">
-            La ISO (Organización Internacional de Normalización) es un organismo mundial que reúne a expertos
-            de más de 160 países para crear normas y estándares que ayudan a las empresas a funcionar mejor,
-            de manera segura y con calidad. Estas normas no son leyes obligatorias por sí solas, pero las
-            organizaciones las adoptan para demostrar que sus productos o servicios son confiables.
-            Cada norma ISO tiene un número: por ejemplo, la ISO 9001 es la más conocida y habla de calidad
-            en los procesos empresariales. En resumen, la ISO pone las reglas del juego para que todas las
-            empresas del mundo puedan competir de forma justa y con los mismos estándares de calidad.
-          </p>
+          <p class="card-desc">La ISO (Organización Internacional de Normalización) es un organismo mundial que reúne a expertos de más de 160 países para crear normas y estándares que ayudan a las empresas a funcionar mejor, de manera segura y con calidad. Estas normas no son leyes obligatorias por sí solas, pero las organizaciones las adoptan para demostrar que sus productos o servicios son confiables. Cada norma ISO tiene un número: por ejemplo, la ISO 9001 es la más conocida y habla de calidad en los procesos empresariales.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> Cuando compras un casco de bicicleta y dice "certificado ISO", significa que fue fabricado siguiendo las reglas de seguridad que la ISO definió para ese producto.</span>
+            <span><strong>Ejemplo:</strong> Cuando compras un casco de bicicleta y dice "certificado ISO", fue fabricado siguiendo las reglas de seguridad que la ISO definió.</span>
           </div>
         </article>
 
-        <!-- 02 · Interna vs Externa -->
+        <!-- 02 Interna vs Externa -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e0faf6"/>
+              <!-- Casa (interna) -->
+              <rect x="20" y="55" width="90" height="65" rx="6" fill="white" stroke="#00c9b1" stroke-width="2"/>
+              <polygon points="20,55 65,20 110,55" fill="#00c9b1" opacity="0.8"/>
+              <!-- Persona adentro -->
+              <circle cx="65" cy="75" r="10" fill="#00c9b1" opacity="0.3"/>
+              <circle cx="65" cy="71" r="6" fill="#00c9b1"/>
+              <rect x="57" y="79" width="16" height="14" rx="4" fill="#00c9b1"/>
+              <!-- Lupa interna -->
+              <circle cx="65" cy="100" r="8" fill="none" stroke="#00c9b1" stroke-width="2"/>
+              <line x1="71" y1="106" x2="76" y2="111" stroke="#00c9b1" stroke-width="2" stroke-linecap="round"/>
+              <!-- Flecha separación -->
+              <text x="118" y="75" font-size="20" fill="#9aa3b8" font-family="sans-serif">⇄</text>
+              <!-- Edificio externo -->
+              <rect x="155" y="45" width="105" height="75" rx="6" fill="white" stroke="#2d5be3" stroke-width="2"/>
+              <rect x="165" y="55" width="20" height="25" rx="3" fill="#e8f0fe"/>
+              <rect x="195" y="55" width="20" height="25" rx="3" fill="#e8f0fe"/>
+              <rect x="225" y="55" width="20" height="25" rx="3" fill="#e8f0fe"/>
+              <rect x="175" y="90" width="25" height="30" rx="4" fill="#2d5be3" opacity="0.3"/>
+              <!-- Persona externa con badge -->
+              <circle cx="220" cy="80" r="10" fill="#2d5be3" opacity="0.2"/>
+              <circle cx="220" cy="76" r="6" fill="#2d5be3"/>
+              <rect x="212" y="84" width="16" height="14" rx="4" fill="#2d5be3"/>
+              <rect x="214" y="70" width="12" height="8" rx="2" fill="#ffb547"/>
+              <!-- Labels -->
+              <rect x="28" y="125" width="74" height="12" rx="6" fill="#00c9b1"/>
+              <text x="65" y="134" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">INTERNA</text>
+              <rect x="163" y="125" width="74" height="12" rx="6" fill="#2d5be3"/>
+              <text x="200" y="134" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">EXTERNA</text>
+            </svg>
+          </div>
           <div class="card-icon ic-teal" aria-hidden="true">🔄</div>
           <p class="card-num">Concepto 02</p>
           <h3 class="card-title">Auditoría Interna vs. Auditoría Externa</h3>
-          <p class="card-desc">
-            Una <strong>auditoría interna</strong> es realizada por personas que trabajan dentro de la misma empresa.
-            Ellas conocen bien los procesos y revisan si todo funciona correctamente desde adentro.
-            Su objetivo es detectar problemas antes de que alguien externo los encuentre.
-            Una <strong>auditoría externa</strong>, en cambio, la hace una persona o empresa independiente,
-            que no tiene relación con la organización. Por eso su opinión es más imparcial y objetiva.
-            Ambas son importantes: la interna para el control y la mejora continua, y la externa para ganar
-            credibilidad ante clientes, socios o entidades reguladoras.
-          </p>
+          <p class="card-desc">Una <strong>auditoría interna</strong> es realizada por personas que trabajan dentro de la misma empresa. Conocen los procesos y revisan si todo funciona correctamente desde adentro. Una <strong>auditoría externa</strong> la hace una persona independiente, sin relación con la organización, por eso su opinión es más imparcial. Ambas son importantes: la interna para el control y mejora continua, y la externa para ganar credibilidad ante clientes y entidades reguladoras.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> Interna = tu mamá revisa tu cuarto antes de la visita. Externa = la abuela llega a inspeccionarlo sin avisar. Las dos encuentran cosas distintas.</span>
           </div>
         </article>
 
-        <!-- 03 · Documentación de referencia -->
+        <!-- 03 Documentación -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#fff8e8"/>
+              <!-- Stack de documentos -->
+              <rect x="30" y="50" width="75" height="95" rx="8" fill="#fde68a" transform="rotate(-8,67,97)"/>
+              <rect x="40" y="45" width="75" height="95" rx="8" fill="#fbbf24" opacity="0.5" transform="rotate(-3,77,92)"/>
+              <rect x="50" y="40" width="80" height="95" rx="8" fill="white" stroke="#ffb547" stroke-width="2"/>
+              <!-- Líneas del doc -->
+              <rect x="63" y="58" width="54" height="7" rx="3" fill="#ffb547" opacity="0.8"/>
+              <rect x="63" y="72" width="44" height="5" rx="2" fill="#fde68a"/>
+              <rect x="63" y="83" width="50" height="5" rx="2" fill="#fde68a"/>
+              <rect x="63" y="94" width="38" height="5" rx="2" fill="#fde68a"/>
+              <rect x="63" y="105" width="46" height="5" rx="2" fill="#fde68a"/>
+              <!-- Lupa de búsqueda -->
+              <circle cx="185" cy="65" r="32" fill="white" stroke="#ffb547" stroke-width="3"/>
+              <circle cx="185" cy="65" r="22" fill="#fff8e8"/>
+              <rect x="173" y="57" width="24" height="5" rx="2" fill="#ffb547" opacity="0.7"/>
+              <rect x="173" y="67" width="18" height="5" rx="2" fill="#ffb547" opacity="0.5"/>
+              <rect x="173" y="77" width="20" height="5" rx="2" fill="#ffb547" opacity="0.3"/>
+              <line x1="210" y1="90" x2="230" y2="112" stroke="#ffb547" stroke-width="5" stroke-linecap="round"/>
+              <!-- Flecha comparación -->
+              <line x1="140" y1="70" x2="155" y2="70" stroke="#9aa3b8" stroke-width="2" stroke-dasharray="4,3"/>
+              <polygon points="155,66 162,70 155,74" fill="#9aa3b8"/>
+            </svg>
+          </div>
           <div class="card-icon ic-amber" aria-hidden="true">📄</div>
           <p class="card-num">Concepto 03</p>
           <h3 class="card-title">Documentación de Referencia</h3>
-          <p class="card-desc">
-            Es el conjunto de documentos que el auditor usa como base para comparar cómo deberían hacerse
-            las cosas versus cómo se están haciendo en realidad. Puede incluir normas internacionales
-            (como las de la ISO), leyes nacionales, reglamentos internos de la empresa, procedimientos
-            escritos, manuales de operación y políticas organizacionales. Sin documentación de referencia,
-            el auditor no tendría un punto de comparación claro y no podría decir si algo está bien o mal.
-            Es la brújula que guía toda la auditoría.
-          </p>
+          <p class="card-desc">Es el conjunto de documentos que el auditor usa como base para comparar cómo deberían hacerse las cosas versus cómo se están haciendo en realidad. Puede incluir normas internacionales (como las de la ISO), leyes nacionales, reglamentos internos, procedimientos escritos y manuales de operación. Sin documentación de referencia, el auditor no tendría un punto de comparación claro. Es la brújula que guía toda la auditoría.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> En el colegio, el reglamento escolar es la documentación de referencia: el inspector lo usa para saber si un estudiante cumplió o no las normas.</span>
           </div>
         </article>
 
-        <!-- 04 · Alcance -->
+        <!-- 04 Alcance -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#f0ebff"/>
+              <!-- Marco/límite del alcance -->
+              <rect x="25" y="20" width="230" height="100" rx="10" fill="none" stroke="#7c4dff" stroke-width="2.5" stroke-dasharray="8,5"/>
+              <!-- Zona auditada (sombreada) -->
+              <rect x="35" y="30" width="120" height="80" rx="8" fill="#7c4dff" opacity="0.12"/>
+              <rect x="35" y="30" width="120" height="80" rx="8" fill="none" stroke="#7c4dff" stroke-width="2"/>
+              <text x="95" y="62" font-size="9" fill="#7c4dff" font-family="sans-serif" text-anchor="middle" font-weight="bold">ZONA</text>
+              <text x="95" y="75" font-size="9" fill="#7c4dff" font-family="sans-serif" text-anchor="middle" font-weight="bold">AUDITADA</text>
+              <!-- Check dentro -->
+              <circle cx="95" cy="90" r="10" fill="#7c4dff"/>
+              <text x="95" y="94" font-size="10" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <!-- Zona fuera del alcance -->
+              <rect x="168" y="30" width="78" height="80" rx="8" fill="#eef0f6"/>
+              <text x="207" y="62" font-size="8" fill="#9aa3b8" font-family="sans-serif" text-anchor="middle">FUERA DEL</text>
+              <text x="207" y="74" font-size="8" fill="#9aa3b8" font-family="sans-serif" text-anchor="middle">ALCANCE</text>
+              <text x="207" y="92" font-size="16" fill="#9aa3b8" font-family="sans-serif" text-anchor="middle">✗</text>
+              <!-- Flecha indicadora -->
+              <path d="M 158 70 L 165 70" stroke="#7c4dff" stroke-width="2"/>
+              <!-- Target/diana -->
+              <circle cx="240" cy="18" r="14" fill="none" stroke="#7c4dff" stroke-width="2" opacity="0.5"/>
+              <circle cx="240" cy="18" r="8" fill="none" stroke="#7c4dff" stroke-width="2" opacity="0.7"/>
+              <circle cx="240" cy="18" r="3" fill="#7c4dff"/>
+            </svg>
+          </div>
           <div class="card-icon ic-violet" aria-hidden="true">🎯</div>
           <p class="card-num">Concepto 04</p>
           <h3 class="card-title">Alcance de la Auditoría</h3>
-          <p class="card-desc">
-            El alcance define con precisión qué áreas, procesos, sistemas o períodos de tiempo van a ser
-            revisados durante la auditoría, y cuáles quedan fuera de ella. Es fundamental establecerlo
-            desde el principio para que el auditor sepa exactamente hasta dónde llega su trabajo y no
-            haya confusiones. Un alcance bien definido evita que la auditoría se extienda demasiado o que
-            se queden aspectos importantes sin revisar. Puede ser amplio (toda la empresa) o muy específico
-            (solo el área de facturación del último trimestre).
-          </p>
+          <p class="card-desc">El alcance define con precisión qué áreas, procesos, sistemas o períodos de tiempo van a ser revisados durante la auditoría, y cuáles quedan fuera. Es fundamental establecerlo desde el principio para que el auditor sepa exactamente hasta dónde llega su trabajo. Un alcance bien definido evita que la auditoría se extienda demasiado o que aspectos importantes queden sin revisar.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> "Voy a revisar solo tu mochila, no toda tu habitación." Eso es el alcance: delimita exactamente qué se va a revisar.</span>
           </div>
         </article>
 
-        <!-- 05 · Auditor de calidad -->
+        <!-- 05 Auditor -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e8f0fe"/>
+              <!-- Persona auditor -->
+              <circle cx="80" cy="45" r="22" fill="#2d5be3" opacity="0.15"/>
+              <circle cx="80" cy="42" r="18" fill="white" stroke="#2d5be3" stroke-width="2"/>
+              <circle cx="80" cy="36" r="9" fill="#2d5be3" opacity="0.7"/>
+              <path d="M 58 60 Q 80 50 102 60 L 105 90 Q 80 95 55 90 Z" fill="#2d5be3" opacity="0.2"/>
+              <rect x="62" y="58" width="36" height="30" rx="6" fill="#2d5be3" opacity="0.3"/>
+              <!-- Badge identificación -->
+              <rect x="108" y="30" width="60" height="80" rx="8" fill="white" stroke="#2d5be3" stroke-width="1.5"/>
+              <rect x="118" y="40" width="40" height="5" rx="2" fill="#2d5be3"/>
+              <rect x="118" y="52" width="28" height="4" rx="2" fill="#e8f0fe"/>
+              <rect x="118" y="62" width="33" height="4" rx="2" fill="#e8f0fe"/>
+              <circle cx="138" cy="85" r="10" fill="#ffb547" opacity="0.8"/>
+              <text x="138" y="89" font-size="10" text-anchor="middle" font-family="sans-serif">★</text>
+              <!-- Portapapeles con checklist -->
+              <rect x="185" y="22" width="72" height="96" rx="8" fill="white" stroke="#2d5be3" stroke-width="1.5"/>
+              <rect x="200" y="15" width="42" height="14" rx="7" fill="#2d5be3"/>
+              <circle cx="198" cy="42" r="4" fill="#00c9b1"/>
+              <rect x="207" y="39" width="38" height="5" rx="2" fill="#e8f0fe"/>
+              <circle cx="198" cy="57" r="4" fill="#00c9b1"/>
+              <rect x="207" y="54" width="30" height="5" rx="2" fill="#e8f0fe"/>
+              <circle cx="198" cy="72" r="4" fill="#ffb547"/>
+              <rect x="207" y="69" width="34" height="5" rx="2" fill="#fde68a"/>
+              <circle cx="198" cy="87" r="4" fill="#ff6b8a"/>
+              <rect x="207" y="84" width="26" height="5" rx="2" fill="#ffd6de"/>
+              <!-- Lupa pequeña -->
+              <circle cx="198" cy="105" r="7" fill="none" stroke="#2d5be3" stroke-width="2"/>
+              <line x1="203" y1="110" x2="208" y2="115" stroke="#2d5be3" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="card-icon ic-blue" aria-hidden="true">👤</div>
           <p class="card-num">Concepto 05</p>
           <h3 class="card-title">El Auditor de Calidad</h3>
-          <p class="card-desc">
-            Es la persona capacitada y certificada para planificar, ejecutar y reportar una auditoría.
-            Su trabajo es evaluar si una organización cumple con los criterios establecidos, identificar
-            fallos o áreas de mejora, y documentar sus hallazgos de forma objetiva y clara.
-            Para hacer su trabajo bien, debe ser imparcial —no puede tener intereses personales en los
-            resultados—, observador, analítico y hábil para comunicar sus conclusiones. Un buen auditor
-            no busca "atrapar" a nadie, sino ayudar a que la organización mejore.
-          </p>
+          <p class="card-desc">Es la persona capacitada y certificada para planificar, ejecutar y reportar una auditoría. Su trabajo es evaluar si una organización cumple con los criterios establecidos, identificar fallos o áreas de mejora, y documentar sus hallazgos de forma objetiva. Debe ser imparcial, no puede tener intereses personales en los resultados. Un buen auditor no busca "atrapar" a nadie, sino ayudar a que la organización mejore.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> Como el inspector de sanidad que visita un restaurante: no va a buscar problemas por gusto, sino a verificar que todo sea seguro para los clientes.</span>
           </div>
         </article>
 
-        <!-- 06 · Programa de auditoría -->
+        <!-- 06 Programa -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e0faf6"/>
+              <!-- Calendario -->
+              <rect x="20" y="20" width="150" height="110" rx="10" fill="white" stroke="#00c9b1" stroke-width="2"/>
+              <rect x="20" y="20" width="150" height="32" rx="10" fill="#00c9b1"/>
+              <rect x="20" y="42" width="150" height="10" fill="#00c9b1"/>
+              <text x="95" y="40" font-size="11" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">PROGRAMA 2025</text>
+              <!-- Cuadrícula del calendario -->
+              <line x1="20" y1="72" x2="170" y2="72" stroke="#e0faf6" stroke-width="1"/>
+              <line x1="20" y1="92" x2="170" y2="92" stroke="#e0faf6" stroke-width="1"/>
+              <line x1="20" y1="112" x2="170" y2="112" stroke="#e0faf6" stroke-width="1"/>
+              <line x1="56" y1="52" x2="56" y2="130" stroke="#e0faf6" stroke-width="1"/>
+              <line x1="92" y1="52" x2="92" y2="130" stroke="#e0faf6" stroke-width="1"/>
+              <line x1="128" y1="52" x2="128" y2="130" stroke="#e0faf6" stroke-width="1"/>
+              <!-- Items marcados -->
+              <rect x="27" y="56" width="22" height="12" rx="4" fill="#00c9b1" opacity="0.8"/>
+              <text x="38" y="65" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">ENE</text>
+              <rect x="63" y="56" width="22" height="12" rx="4" fill="#2d5be3" opacity="0.8"/>
+              <text x="74" y="65" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">MAR</text>
+              <rect x="99" y="56" width="22" height="12" rx="4" fill="#ffb547" opacity="0.8"/>
+              <text x="110" y="65" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">JUN</text>
+              <rect x="135" y="56" width="22" height="12" rx="4" fill="#00c9b1" opacity="0.6"/>
+              <text x="146" y="65" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">SEP</text>
+              <!-- Checks en días -->
+              <circle cx="38" cy="82" r="7" fill="#00c9b1"/>
+              <text x="38" y="86" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <circle cx="74" cy="82" r="7" fill="#2d5be3"/>
+              <text x="74" y="86" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <circle cx="110" cy="82" r="7" fill="#ffb547"/>
+              <text x="110" y="86" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <circle cx="146" cy="82" r="7" fill="#9aa3b8"/>
+              <text x="146" y="86" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">○</text>
+              <!-- Flecha de tiempo -->
+              <rect x="185" y="55" width="70" height="30" rx="8" fill="white" stroke="#00c9b1" stroke-width="1.5"/>
+              <text x="220" y="66" font-size="8" fill="#2c3250" font-family="sans-serif" text-anchor="middle">Responsable:</text>
+              <text x="220" y="78" font-size="8" fill="#2d5be3" font-family="sans-serif" text-anchor="middle" font-weight="bold">Auditor A</text>
+              <rect x="185" y="95" width="70" height="30" rx="8" fill="white" stroke="#2d5be3" stroke-width="1.5"/>
+              <text x="220" y="106" font-size="8" fill="#2c3250" font-family="sans-serif" text-anchor="middle">Duración:</text>
+              <text x="220" y="118" font-size="8" fill="#2d5be3" font-family="sans-serif" text-anchor="middle" font-weight="bold">3 días</text>
+            </svg>
+          </div>
           <div class="card-icon ic-teal" aria-hidden="true">📅</div>
           <p class="card-num">Concepto 06</p>
           <h3 class="card-title">Programa de Auditoría</h3>
-          <p class="card-desc">
-            Es el plan maestro que organiza y coordina todas las auditorías que se van a realizar
-            durante un período determinado (normalmente un año). Incluye qué áreas se van a auditar,
-            en qué fechas, con qué frecuencia, quién será el auditor responsable y qué recursos se
-            necesitan. El programa garantiza que ningún proceso importante quede sin revisar y que
-            las auditorías se realicen de manera ordenada, eficiente y sin conflictos de agenda.
-            Es el calendario de toda la actividad auditora de una organización.
-          </p>
+          <p class="card-desc">Es el plan maestro que organiza y coordina todas las auditorías que se van a realizar durante un período determinado (normalmente un año). Incluye qué áreas se van a auditar, en qué fechas, con qué frecuencia y quién será el auditor responsable. El programa garantiza que ningún proceso importante quede sin revisar y que las auditorías se realicen de manera ordenada y eficiente.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> Como el calendario escolar anual: define cuándo son los exámenes de cada materia, quién los aplica y en qué orden. Así nadie se sorprende.</span>
           </div>
         </article>
 
-        <!-- 07 · Criterios -->
+        <!-- 07 Criterios -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#ffeef2"/>
+              <!-- Balanza -->
+              <line x1="140" y1="25" x2="140" y2="100" stroke="#ff6b8a" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="140" cy="22" r="6" fill="#ff6b8a"/>
+              <line x1="80" y1="55" x2="200" y2="55" stroke="#ff6b8a" stroke-width="3" stroke-linecap="round"/>
+              <!-- Plato izquierdo (cumple) -->
+              <path d="M 60 70 Q 80 80 100 70" stroke="#00c9b1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <line x1="80" y1="55" x2="80" y2="68" stroke="#ff6b8a" stroke-width="2"/>
+              <!-- Items en plato izquierdo -->
+              <rect x="63" y="58" width="34" height="12" rx="4" fill="#00c9b1" opacity="0.8"/>
+              <text x="80" y="67" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">CUMPLE ✓</text>
+              <!-- Plato derecho (no cumple) -->
+              <path d="M 180 80 Q 200 90 220 80" stroke="#ff6b8a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <line x1="200" y1="55" x2="200" y2="78" stroke="#ff6b8a" stroke-width="2"/>
+              <rect x="183" y="68" width="34" height="12" rx="4" fill="#ff6b8a" opacity="0.8"/>
+              <text x="200" y="77" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">FALLA ✗</text>
+              <!-- Libro de normas -->
+              <rect x="25" y="90" width="55" height="35" rx="6" fill="white" stroke="#ff6b8a" stroke-width="1.5"/>
+              <rect x="25" y="90" width="10" height="35" rx="3" fill="#ff6b8a" opacity="0.5"/>
+              <rect x="40" y="98" width="30" height="4" rx="2" fill="#ffeef2"/>
+              <rect x="40" y="107" width="24" height="4" rx="2" fill="#ffeef2"/>
+              <rect x="40" y="116" width="28" height="4" rx="2" fill="#ffeef2"/>
+              <text x="30" y="112" font-size="10" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle" font-weight="bold">§</text>
+              <!-- Regla/escala -->
+              <rect x="190" y="100" width="70" height="22" rx="5" fill="white" stroke="#ff6b8a" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="200" y2="122" stroke="#ff6b8a" stroke-width="1" opacity="0.4"/>
+              <line x1="214" y1="100" x2="214" y2="122" stroke="#ff6b8a" stroke-width="1" opacity="0.4"/>
+              <line x1="228" y1="100" x2="228" y2="122" stroke="#ff6b8a" stroke-width="1" opacity="0.4"/>
+              <line x1="242" y1="100" x2="242" y2="122" stroke="#ff6b8a" stroke-width="1" opacity="0.4"/>
+              <text x="225" y="115" font-size="8" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle">CRITERIO</text>
+            </svg>
+          </div>
           <div class="card-icon ic-rose" aria-hidden="true">⚖️</div>
           <p class="card-num">Concepto 07</p>
           <h3 class="card-title">Criterios de la Auditoría</h3>
-          <p class="card-desc">
-            Los criterios son el conjunto de normas, requisitos, políticas o procedimientos que se usan
-            como referencia para evaluar y medir lo que se está auditando. Son el estándar con el que
-            se compara la realidad: si algo cumple el criterio, está bien; si no lo cumple, es un
-            hallazgo negativo. Los criterios deben ser claros, conocidos y acordados antes de iniciar
-            la auditoría, para que tanto el auditor como los auditados sepan exactamente qué se espera.
-            Sin criterios claros, una auditoría no tiene validez.
-          </p>
+          <p class="card-desc">Los criterios son el conjunto de normas, requisitos y procedimientos que se usan como referencia para evaluar y medir lo que se está auditando. Son el estándar con el que se compara la realidad: si algo cumple el criterio, está bien; si no lo cumple, es un hallazgo negativo. Los criterios deben ser claros y acordados antes de iniciar la auditoría. Sin criterios claros, una auditoría no tiene validez.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
             <span><strong>Ejemplo:</strong> En la escuela, la escala de calificaciones (de 1.0 a 5.0) es el criterio: antes del examen ya sabes que necesitas sacar mínimo 3.0 para pasar.</span>
           </div>
         </article>
 
-        <!-- 08 · Hallazgo -->
+        <!-- 08 Hallazgo -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#fff8e8"/>
+              <!-- Lupa grande -->
+              <circle cx="100" cy="68" r="45" fill="white" stroke="#ffb547" stroke-width="3"/>
+              <circle cx="100" cy="68" r="34" fill="#fff8e8"/>
+              <!-- Documento dentro de la lupa -->
+              <rect x="80" y="52" width="40" height="50" rx="5" fill="white" stroke="#ffb547" stroke-width="1.5"/>
+              <rect x="86" y="60" width="28" height="4" rx="2" fill="#ffb547" opacity="0.7"/>
+              <rect x="86" y="69" width="22" height="4" rx="2" fill="#fde68a"/>
+              <!-- Hallazgo marcado en rojo -->
+              <rect x="86" y="78" width="28" height="8" rx="3" fill="#ff6b8a" opacity="0.3"/>
+              <rect x="86" y="78" width="28" height="8" rx="3" fill="none" stroke="#ff6b8a" stroke-width="1.5"/>
+              <text x="100" y="85" font-size="7" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle" font-weight="bold">HALLAZGO</text>
+              <!-- Mango de la lupa -->
+              <line x1="134" y1="100" x2="158" y2="124" stroke="#ffb547" stroke-width="7" stroke-linecap="round"/>
+              <!-- Resultado / notas -->
+              <rect x="168" y="20" width="90" height="100" rx="10" fill="white" stroke="#ffb547" stroke-width="1.5"/>
+              <rect x="178" y="32" width="70" height="10" rx="5" fill="#ffb547" opacity="0.8"/>
+              <text x="213" y="41" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">HALLAZGOS</text>
+              <!-- Items positivos y negativos -->
+              <circle cx="182" cy="58" r="5" fill="#00c9b1"/>
+              <text x="182" y="61" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">+</text>
+              <rect x="192" y="54" width="56" height="5" rx="2" fill="#e0faf6"/>
+              <circle cx="182" cy="73" r="5" fill="#ff6b8a"/>
+              <text x="182" y="76" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">!</text>
+              <rect x="192" y="69" width="40" height="5" rx="2" fill="#ffd6de"/>
+              <circle cx="182" cy="88" r="5" fill="#ff6b8a"/>
+              <text x="182" y="91" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">!</text>
+              <rect x="192" y="84" width="50" height="5" rx="2" fill="#ffd6de"/>
+              <circle cx="182" cy="103" r="5" fill="#00c9b1"/>
+              <text x="182" y="106" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">+</text>
+              <rect x="192" y="99" width="44" height="5" rx="2" fill="#e0faf6"/>
+            </svg>
+          </div>
           <div class="card-icon ic-amber" aria-hidden="true">🔎</div>
           <p class="card-num">Concepto 08</p>
           <h3 class="card-title">Hallazgo de la Auditoría</h3>
-          <p class="card-desc">
-            Un hallazgo es el resultado de comparar la evidencia recopilada durante la auditoría con los
-            criterios establecidos. Puede ser positivo (cuando se cumple o supera lo esperado) o negativo
-            (cuando hay diferencias, incumplimientos o riesgos). Los hallazgos se documentan con evidencia
-            concreta: documentos, registros, observaciones o declaraciones. Son la base del informe final
-            de auditoría y deben ser comunicados de forma clara y objetiva. Cada hallazgo que muestra
-            un problema debe incluir la causa, el efecto y una recomendación de mejora.
-          </p>
+          <p class="card-desc">Un hallazgo es el resultado de comparar la evidencia recopilada durante la auditoría con los criterios establecidos. Puede ser positivo (cuando se cumple o supera lo esperado) o negativo (cuando hay diferencias o incumplimientos). Los hallazgos se documentan con evidencia concreta y son la base del informe final. Cada hallazgo negativo debe incluir la causa, el efecto y una recomendación de mejora.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> Revisas tu mochila para ir al colegio y encuentras que falta el cuaderno de matemáticas y el borrador. Esos dos elementos son los hallazgos de tu "auditoría de mochila".</span>
+            <span><strong>Ejemplo:</strong> Revisas tu mochila para ir al colegio y encuentras que falta el cuaderno de matemáticas. Ese es el hallazgo de tu "auditoría de mochila".</span>
           </div>
         </article>
 
-        <!-- 09 · Conformidad -->
+        <!-- 09 Conformidad -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e6faf5"/>
+              <!-- Círculo de éxito grande -->
+              <circle cx="80" cy="70" r="48" fill="#00c9b1" opacity="0.1"/>
+              <circle cx="80" cy="70" r="36" fill="white" stroke="#00c9b1" stroke-width="3"/>
+              <circle cx="80" cy="70" r="24" fill="#00c9b1" opacity="0.15"/>
+              <!-- Check grande -->
+              <path d="M 62 70 L 74 82 L 100 58" stroke="#00c9b1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Estrellas de éxito -->
+              <circle cx="38" cy="32" r="8" fill="#ffb547" opacity="0.8"/>
+              <text x="38" y="36" font-size="8" text-anchor="middle" font-family="sans-serif">★</text>
+              <circle cx="122" cy="28" r="6" fill="#ffb547" opacity="0.6"/>
+              <text x="122" y="32" font-size="6" text-anchor="middle" font-family="sans-serif">★</text>
+              <!-- Lista de requisitos cumplidos -->
+              <rect x="150" y="20" width="110" height="100" rx="10" fill="white" stroke="#00c9b1" stroke-width="1.5"/>
+              <rect x="160" y="32" width="90" height="10" rx="5" fill="#00c9b1" opacity="0.8"/>
+              <text x="205" y="40" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">REQUISITOS</text>
+              <circle cx="168" cy="57" r="6" fill="#00c9b1"/>
+              <text x="168" y="61" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <rect x="180" y="53" width="68" height="7" rx="3" fill="#e6faf5"/>
+              <circle cx="168" cy="74" r="6" fill="#00c9b1"/>
+              <text x="168" y="78" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <rect x="180" y="70" width="55" height="7" rx="3" fill="#e6faf5"/>
+              <circle cx="168" cy="91" r="6" fill="#00c9b1"/>
+              <text x="168" y="95" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <rect x="180" y="87" width="62" height="7" rx="3" fill="#e6faf5"/>
+              <circle cx="168" cy="108" r="6" fill="#00c9b1"/>
+              <text x="168" y="112" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle">✓</text>
+              <rect x="180" y="104" width="48" height="7" rx="3" fill="#e6faf5"/>
+            </svg>
+          </div>
           <div class="card-icon ic-green" aria-hidden="true">✅</div>
           <p class="card-num">Concepto 09</p>
           <h3 class="card-title">Conformidad</h3>
-          <p class="card-desc">
-            La conformidad ocurre cuando una actividad, proceso, producto o sistema cumple plenamente
-            con los requisitos o criterios establecidos. Es una señal positiva en la auditoría: significa
-            que las cosas se están haciendo correctamente y de acuerdo a las normas. Registrar las
-            conformidades es tan importante como registrar los problemas, porque permite reconocer las
-            buenas prácticas, motivar a los equipos y tenerlas como referencia para mejorar otras áreas.
-            Una empresa con muchas conformidades transmite confianza a sus clientes y socios.
-          </p>
+          <p class="card-desc">La conformidad ocurre cuando una actividad, proceso o sistema cumple plenamente con los requisitos o criterios establecidos. Es una señal positiva en la auditoría: significa que las cosas se están haciendo correctamente. Registrar las conformidades es tan importante como registrar los problemas, porque permite reconocer las buenas prácticas y motivar a los equipos. Una empresa con muchas conformidades transmite confianza a sus clientes.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> El inspector de sanidad revisa la cocina del restaurante y la nevera está a la temperatura correcta. Eso es una conformidad: cumple exactamente con la norma.</span>
+            <span><strong>Ejemplo:</strong> El inspector revisa la nevera del restaurante y está a la temperatura correcta. Eso es conformidad: cumple exactamente con la norma.</span>
           </div>
         </article>
 
-        <!-- 10 · No conformidad -->
+        <!-- 10 No conformidad -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#fff0f3"/>
+              <!-- Señal de alerta -->
+              <polygon points="80,18 130,108 30,108" fill="#ff6b8a" opacity="0.15"/>
+              <polygon points="80,18 130,108 30,108" fill="none" stroke="#ff6b8a" stroke-width="3" stroke-linejoin="round"/>
+              <text x="80" y="82" font-size="32" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle" font-weight="bold">!</text>
+              <circle cx="80" cy="100" r="4" fill="#ff6b8a"/>
+              <!-- Proceso fallido -->
+              <rect x="152" y="20" width="108" height="45" rx="8" fill="white" stroke="#ff6b8a" stroke-width="1.5"/>
+              <text x="206" y="36" font-size="8" fill="#2c3250" font-family="sans-serif" text-anchor="middle">Norma exige:</text>
+              <text x="206" y="52" font-size="11" fill="#00c9b1" font-family="sans-serif" text-anchor="middle" font-weight="bold">≤ 4°C</text>
+              <rect x="152" y="75" width="108" height="45" rx="8" fill="white" stroke="#ff6b8a" stroke-width="1.5"/>
+              <text x="206" y="91" font-size="8" fill="#2c3250" font-family="sans-serif" text-anchor="middle">Realidad actual:</text>
+              <text x="206" y="108" font-size="11" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle" font-weight="bold">12°C ✗</text>
+              <!-- Flecha de diferencia -->
+              <line x1="206" y1="66" x2="206" y2="74" stroke="#ff6b8a" stroke-width="2" stroke-dasharray="3,2"/>
+              <polygon points="202,73 206,80 210,73" fill="#ff6b8a"/>
+              <!-- Etiqueta acción correctiva -->
+              <rect x="152" y="127" width="108" height="10" rx="5" fill="#ff6b8a" opacity="0.2"/>
+              <text x="206" y="135" font-size="7" fill="#ff6b8a" font-family="sans-serif" text-anchor="middle" font-weight="bold">→ ACCIÓN CORRECTIVA REQUERIDA</text>
+            </svg>
+          </div>
           <div class="card-icon ic-rose" aria-hidden="true">❌</div>
           <p class="card-num">Concepto 10</p>
           <h3 class="card-title">No Conformidad</h3>
-          <p class="card-desc">
-            Una no conformidad es el incumplimiento de un requisito o criterio establecido. Puede ser
-            menor (un detalle que no se cumple, pero no genera un riesgo grave) o mayor (un fallo
-            importante que puede afectar la calidad, seguridad o legalidad del proceso). No es
-            necesariamente un error grave o una catástrofe; más bien es una señal de que algo necesita
-            corregirse. Cuando se detecta una no conformidad, la organización debe analizarla, encontrar
-            la causa raíz y tomar acciones correctivas para evitar que vuelva a ocurrir.
-          </p>
+          <p class="card-desc">Una no conformidad es el incumplimiento de un requisito o criterio establecido. Puede ser menor (un detalle que no se cumple sin generar riesgo grave) o mayor (un fallo importante que afecta la calidad o seguridad). No es una catástrofe; es una señal de que algo necesita corregirse. Cuando se detecta, la organización debe analizarla, encontrar la causa raíz y tomar acciones correctivas para evitar que vuelva a ocurrir.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> El restaurante tiene la nevera a 12°C, pero la norma exige máximo 4°C. Eso es una no conformidad: hay un incumplimiento que debe corregirse cuanto antes.</span>
+            <span><strong>Ejemplo:</strong> El restaurante tiene la nevera a 12°C, pero la norma exige máximo 4°C. Eso es una no conformidad que debe corregirse cuanto antes.</span>
           </div>
         </article>
 
-        <!-- 11 · Oportunidad de mejora -->
+        <!-- 11 Oportunidad de mejora -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#fff4e8"/>
+              <!-- Cohete -->
+              <ellipse cx="80" cy="65" rx="22" ry="38" fill="white" stroke="#fb923c" stroke-width="2.5" transform="rotate(-30,80,65)"/>
+              <ellipse cx="68" cy="44" rx="10" ry="16" fill="#fb923c" opacity="0.7" transform="rotate(-30,68,44)"/>
+              <circle cx="77" cy="60" r="8" fill="#e8f0fe" stroke="#fb923c" stroke-width="1.5"/>
+              <!-- Llama -->
+              <ellipse cx="96" cy="86" rx="7" ry="12" fill="#ffb547" opacity="0.9" transform="rotate(-30,96,86)"/>
+              <ellipse cx="93" cy="90" rx="4" ry="8" fill="#ff6b8a" opacity="0.7" transform="rotate(-30,93,90)"/>
+              <!-- Flecha de mejora hacia arriba -->
+              <path d="M 150 110 L 150 40" stroke="#fb923c" stroke-width="3" stroke-dasharray="6,4" stroke-linecap="round"/>
+              <polygon points="144,42 150,28 156,42" fill="#fb923c"/>
+              <!-- Barra de progreso -->
+              <rect x="170" y="30" width="90" height="18" rx="9" fill="#fde68a"/>
+              <rect x="170" y="30" width="72" height="18" rx="9" fill="#fb923c"/>
+              <text x="215" y="43" font-size="9" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">80% → 95%</text>
+              <!-- Niveles de mejora -->
+              <rect x="170" y="58" width="90" height="22" rx="6" fill="white" stroke="#fb923c" stroke-width="1.5"/>
+              <text x="215" y="68" font-size="7" fill="#9aa3b8" font-family="sans-serif" text-anchor="middle">Nivel actual</text>
+              <text x="215" y="77" font-size="9" fill="#fb923c" font-family="sans-serif" text-anchor="middle" font-weight="bold">✓ Cumple</text>
+              <rect x="170" y="88" width="90" height="22" rx="6" fill="white" stroke="#ffb547" stroke-width="1.5"/>
+              <text x="215" y="98" font-size="7" fill="#9aa3b8" font-family="sans-serif" text-anchor="middle">Sugerencia</text>
+              <text x="215" y="107" font-size="8" fill="#fb923c" font-family="sans-serif" text-anchor="middle" font-weight="bold">🚀 Podría mejorar</text>
+            </svg>
+          </div>
           <div class="card-icon ic-orange" aria-hidden="true">🚀</div>
           <p class="card-num">Concepto 11</p>
           <h3 class="card-title">Oportunidad de Mejora</h3>
-          <p class="card-desc">
-            Es una observación del auditor que no implica un incumplimiento grave, pero señala una
-            situación que podría hacerse mejor, de forma más eficiente, más segura o más económica.
-            No es una obligación corregirla de inmediato como sí lo es una no conformidad, pero si
-            se aprovecha, la organización puede evolucionar y fortalecerse. Las oportunidades de mejora
-            son muy valiosas porque muestran el potencial de crecimiento y permiten a las empresas
-            adelantarse a problemas futuros antes de que se conviertan en no conformidades reales.
-          </p>
+          <p class="card-desc">Es una observación del auditor que no implica un incumplimiento grave, pero señala una situación que podría hacerse mejor, de forma más eficiente, segura o económica. No es obligatorio corregirla de inmediato como una no conformidad, pero si se aprovecha, la organización puede evolucionar. Son muy valiosas porque muestran el potencial de crecimiento y permiten adelantarse a problemas futuros.</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> Tu tarea está completa y bien hecha (conformidad), pero el profe sugiere usar colores para que sea más visual y fácil de leer. Esa sugerencia es una oportunidad de mejora.</span>
+            <span><strong>Ejemplo:</strong> Tu tarea está completa y bien hecha, pero el profe sugiere usar colores para que sea más visual. Esa sugerencia es una oportunidad de mejora.</span>
           </div>
         </article>
 
-        <!-- 12 · Ley 1581 -->
+        <!-- 12 Ley 1581 -->
         <article class="card reveal" role="listitem">
+          <div class="card-illustration" aria-hidden="true">
+            <svg viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="140" rx="12" fill="#e8f4fd"/>
+              <!-- Escudo de protección -->
+              <path d="M 70 20 L 110 20 L 120 30 L 120 80 Q 120 105 90 118 Q 60 105 60 80 L 60 30 Z" fill="#0ea5e9" opacity="0.15"/>
+              <path d="M 70 20 L 110 20 L 120 30 L 120 80 Q 120 105 90 118 Q 60 105 60 80 L 60 30 Z" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linejoin="round"/>
+              <!-- Check dentro del escudo -->
+              <path d="M 75 68 L 85 80 L 108 55" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <!-- Bandera Colombia (simplificada) -->
+              <rect x="78" y="24" width="24" height="16" rx="2" fill="#ffcd00"/>
+              <rect x="78" y="32" width="24" height="5" rx="0" fill="#003893"/>
+              <rect x="78" y="35" width="24" height="5" rx="0" fill="#ce1126"/>
+              <!-- Datos protegidos -->
+              <rect x="145" y="18" width="118" height="104" rx="10" fill="white" stroke="#0ea5e9" stroke-width="1.5"/>
+              <rect x="155" y="28" width="98" height="12" rx="6" fill="#0ea5e9" opacity="0.8"/>
+              <text x="204" y="37" font-size="8" fill="white" font-family="sans-serif" text-anchor="middle" font-weight="bold">LEY 1581 · 2012</text>
+              <!-- Items de datos -->
+              <circle cx="163" cy="54" r="5" fill="#0ea5e9" opacity="0.5"/>
+              <text x="163" y="57" font-size="7" fill="white" font-family="sans-serif" text-anchor="middle">👤</text>
+              <rect x="174" y="50" width="76" height="6" rx="3" fill="#e8f4fd"/>
+              <text x="212" y="55" font-size="7" fill="#5a6480" font-family="sans-serif" text-anchor="middle">Nombre / Cédula</text>
+              <circle cx="163" cy="70" r="5" fill="#0ea5e9" opacity="0.5"/>
+              <rect x="174" y="66" width="76" height="6" rx="3" fill="#e8f4fd"/>
+              <text x="212" y="71" font-size="7" fill="#5a6480" font-family="sans-serif" text-anchor="middle">📧 Correo / Teléfono</text>
+              <circle cx="163" cy="86" r="5" fill="#0ea5e9" opacity="0.5"/>
+              <rect x="174" y="82" width="76" height="6" rx="3" fill="#e8f4fd"/>
+              <text x="212" y="87" font-size="7" fill="#5a6480" font-family="sans-serif" text-anchor="middle">📍 Dirección</text>
+              <!-- Candado -->
+              <rect x="178" y="98" width="52" height="16" rx="5" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="1.5"/>
+              <text x="204" y="110" font-size="9" fill="#0ea5e9" font-family="sans-serif" text-anchor="middle" font-weight="bold">🔒 PROTEGIDO</text>
+            </svg>
+          </div>
           <div class="card-icon ic-sky" aria-hidden="true">🇨🇴</div>
           <p class="card-num">Concepto 12</p>
           <h3 class="card-title">Ley 1581 de 2012 — Colombia</h3>
-          <p class="card-desc">
-            Es la Ley de Protección de Datos Personales de Colombia. Se encarga de regular cómo las
-            empresas, entidades y personas pueden recolectar, almacenar, usar y compartir los datos
-            personales de otras personas (nombre, cédula, dirección, correo, teléfono, etc.).
-            La ley establece que nadie puede usar tus datos sin tu autorización expresa, y que tienes
-            el derecho a saber qué datos tienen de ti, para qué los usan y a pedir que los eliminen
-            si ya no son necesarios. Las empresas que incumplan esta ley pueden recibir multas muy altas
-            por parte de la Superintendencia de Industria y Comercio (SIC).
-          </p>
+          <p class="card-desc">Es la Ley de Protección de Datos Personales de Colombia. Regula cómo las empresas y personas pueden recolectar, almacenar, usar y compartir datos personales (nombre, cédula, dirección, correo, teléfono). Establece que nadie puede usar tus datos sin tu autorización expresa, y tienes el derecho a saber qué datos tienen de ti y a pedir que los eliminen. Las empresas que incumplan pueden recibir multas muy altas de la Superintendencia de Industria y Comercio (SIC).</p>
           <div class="card-example" aria-label="Ejemplo práctico">
             <span class="ex-icon">💡</span>
-            <span><strong>Ejemplo:</strong> Cuando te registras en una app y aparece un mensaje diciendo "acepto el tratamiento de mis datos personales", eso es la Ley 1581 en acción: la app te está pidiendo permiso antes de usar tu información.</span>
+            <span><strong>Ejemplo:</strong> Cuando te registras en una app y aparece "acepto el tratamiento de mis datos personales", eso es la Ley 1581 en acción: la app te pide permiso antes de usar tu información.</span>
           </div>
         </article>
 
@@ -375,21 +615,15 @@
     </div>
   </section>
 
-  <!-- =====================
-       COMPARACIÓN
-  ===================== -->
+  <!-- COMPARACIÓN -->
   <section class="comparison-section" aria-labelledby="comp-titulo">
     <div class="container">
-
       <div class="section-header reveal">
         <span class="section-tag">⚡ Comparación</span>
         <h2 id="comp-titulo" class="section-title">¿Qué pasa con y sin auditoría?</h2>
         <p class="section-sub">Como ver el antes y el después de ordenar tu cuarto — pero en una empresa.</p>
       </div>
-
       <div class="comparison-grid">
-
-        <!-- Sin auditoría -->
         <div class="comp-card bad reveal" role="region" aria-label="Sistema sin auditoría">
           <span class="comp-badge">😰 Sin Auditoría</span>
           <h3 class="comp-title">Sistema sin revisión</h3>
@@ -403,8 +637,6 @@
           </ul>
           <div class="comp-watermark" aria-hidden="true">🔥</div>
         </div>
-
-        <!-- Con auditoría -->
         <div class="comp-card good reveal" role="region" aria-label="Sistema con auditoría">
           <span class="comp-badge">😊 Con Auditoría</span>
           <h3 class="comp-title">Sistema revisado y ordenado</h3>
@@ -418,26 +650,18 @@
           </ul>
           <div class="comp-watermark" aria-hidden="true">🏆</div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- =====================
-       CHECKLIST + CTA FINAL
-  ===================== -->
+  <!-- CHECKLIST + CTA FINAL -->
   <section class="checklist-section" aria-labelledby="checklist-titulo">
     <div class="container">
-
       <div class="section-header reveal">
         <span class="section-tag">✅ Lo que aprendiste</span>
         <h2 id="checklist-titulo" class="section-title">¡Ya lo sabes todo!</h2>
-        <p class="section-sub">
-          Si llegaste hasta aquí, ya tienes los 12 conceptos clave de la auditoría de sistemas.
-          ¡Eso es un gran logro!
-        </p>
+        <p class="section-sub">Si llegaste hasta aquí, ya tienes los 12 conceptos clave de la auditoría de sistemas. ¡Eso es un gran logro!</p>
       </div>
-
       <div class="checklist-grid" role="list" aria-label="Conceptos aprendidos">
         <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🌍</div><span class="check-text">Qué es la ISO y para qué sirve</span></div>
         <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🔄</div><span class="check-text">Auditoría interna vs. auditoría externa</span></div>
@@ -452,30 +676,18 @@
         <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🚀</div><span class="check-text">Qué es una oportunidad de mejora</span></div>
         <div class="check-item reveal" role="listitem"><div class="check-icon-box" aria-hidden="true">🇨🇴</div><span class="check-text">Para qué sirve la Ley 1581 de 2012</span></div>
       </div>
-
-      <!-- CTA Final -->
       <div class="cta-box reveal" role="complementary" aria-label="Llamado a la acción final">
         <h2>¡Ya eres un experto! 🎉</h2>
-        <p>
-          Entender la auditoría de sistemas es el primer paso para construir organizaciones más honestas,
-          seguras y organizadas. Ahora puedes explicarle estos conceptos a cualquier persona.
-        </p>
-        <a href="#conceptos" class="cta-btn" aria-label="Volver al inicio a repasar los conceptos">
-          🔄 Repasar los conceptos
-        </a>
+        <p>Entender la auditoría de sistemas es el primer paso para construir organizaciones más honestas, seguras y organizadas. Ahora puedes explicarle estos conceptos a cualquier persona.</p>
+        <a href="#conceptos" class="cta-btn" aria-label="Volver al inicio a repasar los conceptos">🔄 Repasar los conceptos</a>
       </div>
-
     </div>
   </section>
 
-  <!-- =====================
-       FOOTER
-  ===================== -->
   <footer role="contentinfo">
-    <p>Hecho con ❤️ para que aprender sea <strong>fácil y divertido</strong> &middot; AuditaFácil &copy; 2025</p>
+    <p>Nelson Martinez, William Higuera, Brayan Martinez</p>
   </footer>
 
-  <!-- JS al final del body -->
   <script src="main.js"></script>
 </body>
 </html>

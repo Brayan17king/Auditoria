@@ -469,6 +469,25 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(26,47,90,0.09); }
 .ic-orange { background: rgba(251,146,60,0.1); }
 .ic-sky    { background: rgba(14,165,233,0.1); }
 
+/* Ilustración superior de la tarjeta */
+.card-illustration {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: var(--transition);
+}
+
+.card:hover .card-illustration svg {
+  transform: scale(1.03);
+}
+
 .card-num {
   font-size: 0.68rem;
   font-weight: 700;
